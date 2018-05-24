@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastRecipes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastRecipesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastRecipesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecipe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="reciepId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecipeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecipeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddToFavorits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="reciepId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddToFavoritsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveFromFavorits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="reciepId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveFromFavoritsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSelectedRecipes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSelectedRecipesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSelectedRecipesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsRecipeInShoppingList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="recipeId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsRecipeInShoppingListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsRecipeInShoppingListResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyRecipes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyRecipesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMyRecipesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFavoritRecipes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFavoritRecipesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFavoritRecipesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchRecipes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefix" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchRecipesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchRecipesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddToShoppingList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="reciepId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="servings" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddToShoppingListResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveFromShoppingList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="reciepId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveFromShoppingListResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastRecipesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastRecipes" />
+  </wsdl:message>
+  <wsdl:message name="GetLastRecipesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastRecipesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecipeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecipe" />
+  </wsdl:message>
+  <wsdl:message name="GetRecipeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddToFavoritsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddToFavorits" />
+  </wsdl:message>
+  <wsdl:message name="AddToFavoritsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddToFavoritsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveFromFavoritsSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveFromFavorits" />
+  </wsdl:message>
+  <wsdl:message name="RemoveFromFavoritsSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveFromFavoritsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSelectedRecipesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSelectedRecipes" />
+  </wsdl:message>
+  <wsdl:message name="GetSelectedRecipesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSelectedRecipesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsRecipeInShoppingListSoapIn">
+    <wsdl:part name="parameters" element="tns:IsRecipeInShoppingList" />
+  </wsdl:message>
+  <wsdl:message name="IsRecipeInShoppingListSoapOut">
+    <wsdl:part name="parameters" element="tns:IsRecipeInShoppingListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMyRecipesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMyRecipes" />
+  </wsdl:message>
+  <wsdl:message name="GetMyRecipesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMyRecipesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFavoritRecipesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFavoritRecipes" />
+  </wsdl:message>
+  <wsdl:message name="GetFavoritRecipesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFavoritRecipesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchRecipesSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchRecipes" />
+  </wsdl:message>
+  <wsdl:message name="SearchRecipesSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchRecipesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddToShoppingListSoapIn">
+    <wsdl:part name="parameters" element="tns:AddToShoppingList" />
+  </wsdl:message>
+  <wsdl:message name="AddToShoppingListSoapOut">
+    <wsdl:part name="parameters" element="tns:AddToShoppingListResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveFromShoppingListSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveFromShoppingList" />
+  </wsdl:message>
+  <wsdl:message name="RemoveFromShoppingListSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveFromShoppingListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RecipesServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastRecipes">
+      <wsdl:input message="tns:GetLastRecipesSoapIn" />
+      <wsdl:output message="tns:GetLastRecipesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipe">
+      <wsdl:input message="tns:GetRecipeSoapIn" />
+      <wsdl:output message="tns:GetRecipeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToFavorits">
+      <wsdl:input message="tns:AddToFavoritsSoapIn" />
+      <wsdl:output message="tns:AddToFavoritsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromFavorits">
+      <wsdl:input message="tns:RemoveFromFavoritsSoapIn" />
+      <wsdl:output message="tns:RemoveFromFavoritsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectedRecipes">
+      <wsdl:input message="tns:GetSelectedRecipesSoapIn" />
+      <wsdl:output message="tns:GetSelectedRecipesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsRecipeInShoppingList">
+      <wsdl:input message="tns:IsRecipeInShoppingListSoapIn" />
+      <wsdl:output message="tns:IsRecipeInShoppingListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyRecipes">
+      <wsdl:input message="tns:GetMyRecipesSoapIn" />
+      <wsdl:output message="tns:GetMyRecipesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFavoritRecipes">
+      <wsdl:input message="tns:GetFavoritRecipesSoapIn" />
+      <wsdl:output message="tns:GetFavoritRecipesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchRecipes">
+      <wsdl:input message="tns:SearchRecipesSoapIn" />
+      <wsdl:output message="tns:SearchRecipesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToShoppingList">
+      <wsdl:input message="tns:AddToShoppingListSoapIn" />
+      <wsdl:output message="tns:AddToShoppingListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromShoppingList">
+      <wsdl:input message="tns:RemoveFromShoppingListSoapIn" />
+      <wsdl:output message="tns:RemoveFromShoppingListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RecipesServiceSoap" type="tns:RecipesServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastRecipes">
+      <soap:operation soapAction="http://tempuri.org/GetLastRecipes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipe">
+      <soap:operation soapAction="http://tempuri.org/GetRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToFavorits">
+      <soap:operation soapAction="http://tempuri.org/AddToFavorits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromFavorits">
+      <soap:operation soapAction="http://tempuri.org/RemoveFromFavorits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectedRecipes">
+      <soap:operation soapAction="http://tempuri.org/GetSelectedRecipes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsRecipeInShoppingList">
+      <soap:operation soapAction="http://tempuri.org/IsRecipeInShoppingList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyRecipes">
+      <soap:operation soapAction="http://tempuri.org/GetMyRecipes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFavoritRecipes">
+      <soap:operation soapAction="http://tempuri.org/GetFavoritRecipes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRecipes">
+      <soap:operation soapAction="http://tempuri.org/SearchRecipes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToShoppingList">
+      <soap:operation soapAction="http://tempuri.org/AddToShoppingList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromShoppingList">
+      <soap:operation soapAction="http://tempuri.org/RemoveFromShoppingList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RecipesServiceSoap12" type="tns:RecipesServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastRecipes">
+      <soap12:operation soapAction="http://tempuri.org/GetLastRecipes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipe">
+      <soap12:operation soapAction="http://tempuri.org/GetRecipe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToFavorits">
+      <soap12:operation soapAction="http://tempuri.org/AddToFavorits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromFavorits">
+      <soap12:operation soapAction="http://tempuri.org/RemoveFromFavorits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectedRecipes">
+      <soap12:operation soapAction="http://tempuri.org/GetSelectedRecipes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsRecipeInShoppingList">
+      <soap12:operation soapAction="http://tempuri.org/IsRecipeInShoppingList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyRecipes">
+      <soap12:operation soapAction="http://tempuri.org/GetMyRecipes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFavoritRecipes">
+      <soap12:operation soapAction="http://tempuri.org/GetFavoritRecipes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRecipes">
+      <soap12:operation soapAction="http://tempuri.org/SearchRecipes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToShoppingList">
+      <soap12:operation soapAction="http://tempuri.org/AddToShoppingList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromShoppingList">
+      <soap12:operation soapAction="http://tempuri.org/RemoveFromShoppingList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RecipesService">
+    <wsdl:port name="RecipesServiceSoap" binding="tns:RecipesServiceSoap">
+      <soap:address location="http://localhost/MyBuyListMobileService/RecipesService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RecipesServiceSoap12" binding="tns:RecipesServiceSoap12">
+      <soap12:address location="http://localhost/MyBuyListMobileService/RecipesService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

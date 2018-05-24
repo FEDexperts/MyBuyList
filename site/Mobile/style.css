@@ -1,0 +1,80 @@
+.pointer-cursor{
+	cursor: pointer
+}
+
+#m1-Lists-tabBar3-pageAlfabet-label{
+	top: 8px !important;
+}
+
+#m1-Lists-tabBar3-pageCategories-label{
+	top: 8px !important;
+}
+
+#m1-Lists-tabBar2-pageSelectedRecipes-label{
+	top: 8px !important;
+}
+
+#m1-Lists-tabBar2-pageSearchRecipes-label{
+	top: 8px !important;
+}
+
+#m1-Recipe-tabBar1-pageIngredients-label{
+	top: 8px !important;
+}
+
+#m1-Recipe-tabBar1-pagePreparationMethod-label{
+	top: 8px !important;
+}
+
+
+#m1-Lists-Logout{
+	cursor: pointer;
+	text-decoration: underline;
+	color: navy;
+}
+
+#m1-Lists-text1{
+	cursor: pointer;
+}
+
+#m1-Lists-text2{
+	cursor: pointer;
+}
+
+#m1-Lists-text4{
+	cursor: pointer;
+}
+
+#m1-Lists-text8{
+	cursor: pointer;
+}
+
+.ingridiantName{
+	font-size: 14px;
+	font-family: verdana;
+	font-style: normal;
+}
+
+.show-recipe{
+	cursor: pointer;
+}
+
+.alfabet-item{
+	height: 46px;
+}
+
+li.category-header{
+	height: 20px;
+	direction: rtl;
+}
+
+	li.category-header label{
+		float: right !important;
+		margin-right: 10px !important;
+		color: #679b08;
+		font-style: normal;
+	}
+
+.category-item{
+	height: 46px;
+}

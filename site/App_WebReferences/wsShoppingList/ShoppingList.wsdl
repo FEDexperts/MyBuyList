@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="list" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateListResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSavedList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSavedListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSavedListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCategoriesInShoppingList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCategoriesInShoppingListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCategoriesInShoppingListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShoppingList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShoppingListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShoppingListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateListSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateList" />
+  </wsdl:message>
+  <wsdl:message name="UpdateListSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSavedListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSavedList" />
+  </wsdl:message>
+  <wsdl:message name="GetSavedListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSavedListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoriesInShoppingListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCategoriesInShoppingList" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoriesInShoppingListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCategoriesInShoppingListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShoppingListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShoppingList" />
+  </wsdl:message>
+  <wsdl:message name="GetShoppingListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShoppingListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ShoppingListSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateList">
+      <wsdl:input message="tns:UpdateListSoapIn" />
+      <wsdl:output message="tns:UpdateListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSavedList">
+      <wsdl:input message="tns:GetSavedListSoapIn" />
+      <wsdl:output message="tns:GetSavedListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriesInShoppingList">
+      <wsdl:input message="tns:GetCategoriesInShoppingListSoapIn" />
+      <wsdl:output message="tns:GetCategoriesInShoppingListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShoppingList">
+      <wsdl:input message="tns:GetShoppingListSoapIn" />
+      <wsdl:output message="tns:GetShoppingListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ShoppingListSoap" type="tns:ShoppingListSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateList">
+      <soap:operation soapAction="http://tempuri.org/UpdateList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSavedList">
+      <soap:operation soapAction="http://tempuri.org/GetSavedList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriesInShoppingList">
+      <soap:operation soapAction="http://tempuri.org/GetCategoriesInShoppingList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShoppingList">
+      <soap:operation soapAction="http://tempuri.org/GetShoppingList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ShoppingListSoap12" type="tns:ShoppingListSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateList">
+      <soap12:operation soapAction="http://tempuri.org/UpdateList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSavedList">
+      <soap12:operation soapAction="http://tempuri.org/GetSavedList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriesInShoppingList">
+      <soap12:operation soapAction="http://tempuri.org/GetCategoriesInShoppingList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShoppingList">
+      <soap12:operation soapAction="http://tempuri.org/GetShoppingList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ShoppingList">
+    <wsdl:port name="ShoppingListSoap" binding="tns:ShoppingListSoap">
+      <soap:address location="http://localhost/MyBuyListMobileService/ShoppingList.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ShoppingListSoap12" binding="tns:ShoppingListSoap12">
+      <soap12:address location="http://localhost/MyBuyListMobileService/ShoppingList.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

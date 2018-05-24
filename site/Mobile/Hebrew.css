@@ -1,0 +1,27 @@
+.heb-label
+{
+	direction: rtl !important;
+	text-align: right !important;
+}
+
+.list-header
+{
+	direction: rtl !important;
+	text-align: right !important;
+	padding-right: 5px !important;
+	height: 29px !important;
+	background-color: silver !important;
+	font-family: Verdana,Arial,sans-serif !important;
+}
+	.list-header label
+	{
+		padding-right: 10px !important;
+		color: #8dac34;
+	}
+
+.error-message{
+	direction: rtl !important;
+	text-align: center !important;
+	height: auto !important;
+	margin-top: 10px;
+}

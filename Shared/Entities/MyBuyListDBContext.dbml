@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MyBuyList" Class="MyBuyListDBContext" AccessModifier="Internal" Modifier="Sealed" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="ConnectionString" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=MyBuyList;Integrated Security=False;User ID=sa;Password=123456" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ShopDepartments" Member="ShopDepartments">
+    <Type Name="ShopDepartment">
+      <Column Name="ShopDepartmentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShopDepartmentName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="ShopDepartment_FoodCategory" Member="FoodCategories" ThisKey="ShopDepartmentId" OtherKey="ShopDepartmentId" Type="FoodCategory" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserFavoriteRecipes" Member="UserFavoriteRecipes">
+    <Type Name="UserFavoriteRecipe">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Recipe_UserFavoriteRecipe" Member="Recipe" ThisKey="RecipeId" OtherKey="RecipeId" Type="Recipe" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_UserFavoriteRecipe" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MenuRecipes" Member="MenuRecipes">
+    <Type Name="MenuRecipe">
+      <Column Name="MenuId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Recipe_MenuRecipe" Member="Recipe" ThisKey="RecipeId" OtherKey="RecipeId" Type="Recipe" IsForeignKey="true" />
+      <Association Name="Menu_MenuRecipe" Member="Menu" Storage="_Menus" ThisKey="MenuId" OtherKey="MenuId" Type="Menu" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MenuTypes" Member="MenuTypes">
+    <Type Name="MenuType">
+      <Column Name="MenuTypeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MenuTypeName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MenuType_Menu" Member="Menus" ThisKey="MenuTypeId" OtherKey="MenuTypeId" Type="Menu" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MealRecipes" Member="MealRecipes">
+    <Type Name="MealRecipe">
+      <Column Name="MealId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Servings" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Recipe_MealRecipe" Member="Recipe" ThisKey="RecipeId" OtherKey="RecipeId" Type="Recipe" IsForeignKey="true" />
+      <Association Name="Meal_MealRecipe" Member="Meal" ThisKey="MealId" OtherKey="MealId" Type="Meal" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MealTypes" Member="MealTypes">
+    <Type Name="MealType">
+      <Column Name="MealTypeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MealTypeName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MealType_Meal" Member="Meals" ThisKey="MealTypeId" OtherKey="MealTypeId" Type="Meal" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CourseTypes" Member="CourseTypes">
+    <Type Name="CourseType">
+      <Column Name="CourseTypeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CourseTypeName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CourseType_Meal" Member="Meals" ThisKey="CourseTypeId" OtherKey="CourseTypeId" Type="Meal" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Categories" Member="Categories">
+    <Type Name="Category">
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ParentCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Category_Category" Member="Categories" ThisKey="CategoryId" OtherKey="ParentCategoryId" Type="Category" />
+      <Association Name="Category_RecipeCategory" Member="RecipeCategories" ThisKey="CategoryId" OtherKey="CategoryId" Type="RecipeCategory" />
+      <Association Name="Category_Category" Member="ParentCategory" Storage="_Category1" ThisKey="ParentCategoryId" OtherKey="CategoryId" Type="Category" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RecipeCategories" Member="RecipeCategories">
+    <Type Name="RecipeCategory">
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Category_RecipeCategory" Member="Category" ThisKey="CategoryId" OtherKey="CategoryId" Type="Category" IsForeignKey="true" />
+      <Association Name="Recipe_RecipeCategory" Member="Recipe" ThisKey="RecipeId" OtherKey="RecipeId" Type="Recipe" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RecipeIngredientsList" Member="RecipeIngredientsViews">
+    <Type Name="RecipeIngredientsView">
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IngredientId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FoodId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MeasurementUnitId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="UnitName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FoodName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayIngredient" Type="System.String" DbType="NVarChar(314)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FoodCategories" Member="FoodCategories">
+    <Type Name="FoodCategory">
+      <Column Name="FoodCategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FoodCategoryName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ParentCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShopDepartmentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="FoodCategory_FoodCategory" Member="FoodCategories" ThisKey="FoodCategoryId" OtherKey="ParentCategoryId" Type="FoodCategory" />
+      <Association Name="FoodCategory_Food" Member="Foods" ThisKey="FoodCategoryId" OtherKey="FoodCategoryId" Type="Food" />
+      <Association Name="FoodCategory_FoodCategory" Member="ParentFoodCategory" Storage="_FoodCategory1" ThisKey="ParentCategoryId" OtherKey="FoodCategoryId" Type="FoodCategory" IsForeignKey="true" />
+      <Association Name="ShopDepartment_FoodCategory" Member="ShopDepartment" ThisKey="ShopDepartmentId" OtherKey="ShopDepartmentId" Type="ShopDepartment" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GeneralItems" Member="GeneralItems">
+    <Type Name="GeneralItem">
+      <Column Name="GeneralItemId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GeneralItemName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="GeneralItem_ShoppingListAdditionalItem" Member="ShoppingListAdditionalItems" ThisKey="GeneralItemId" OtherKey="GeneralItemId" Type="ShoppingListAdditionalItem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ShoppingListAdditionalItems" Member="ShoppingListAdditionalItems">
+    <Type Name="ShoppingListAdditionalItem">
+      <Column Name="ShoppingListItemId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MenuId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GeneralItemId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="GeneralItem_ShoppingListAdditionalItem" Member="GeneralItem" ThisKey="GeneralItemId" OtherKey="GeneralItemId" Type="GeneralItem" IsForeignKey="true" />
+      <Association Name="Menu_ShoppingListAdditionalItem" Member="Menu" Storage="_Menus" ThisKey="MenuId" OtherKey="MenuId" Type="Menu" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserTypes" Member="UserTypes">
+    <Type Name="UserType">
+      <Column Name="UserTypeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserTypeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="UserType_User" Member="Users" ThisKey="UserTypeId" OtherKey="UserTypeId" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NutCategories" Member="NutCategories">
+    <Type Name="NutCategory">
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="NutCategory_NutItem" Member="NutItems" ThisKey="CategoryId" OtherKey="NutCategoryId" Type="NutItem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NutItems" Member="NutItems">
+    <Type Name="NutItem">
+      <Column Name="NutItemId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NutItemName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayUnit" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NutCategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="NutItem_NutValue" Member="NutValues" ThisKey="NutItemId" OtherKey="NutItemId" Type="NutValue" />
+      <Association Name="NutCategory_NutItem" Member="NutCategory" ThisKey="NutCategoryId" OtherKey="CategoryId" Type="NutCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MBLSettings" Member="MBLSettings">
+    <Type Name="MBLSetting">
+      <Column Name="SettingKey" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SettingValue" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MCategories" Member="MCategories">
+    <Type Name="MCategory">
+      <Column Name="MCategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MCategoryName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ParentMCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="MCategory_MCategory" Member="MCategories" ThisKey="MCategoryId" OtherKey="ParentMCategoryId" Type="MCategory" />
+      <Association Name="MCategory_MenuCategory" Member="MenuCategories" ThisKey="MCategoryId" OtherKey="MCategoryId" Type="MenuCategory" />
+      <Association Name="MCategory_MCategory" Member="MCategory1" ThisKey="ParentMCategoryId" OtherKey="MCategoryId" Type="MCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MenuCategories" Member="MenuCategories">
+    <Type Name="MenuCategory">
+      <Column Name="MenuId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MCategoryId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="MCategory_MenuCategory" Member="MCategory" ThisKey="MCategoryId" OtherKey="MCategoryId" Type="MCategory" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Menu_MenuCategory" Member="Menu" Storage="_Menus" ThisKey="MenuId" OtherKey="MenuId" Type="Menu" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Articles" Member="Articles">
+    <Type Name="Article">
+      <Column Name="ArticleId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Abstract" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Body" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Publisher" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Recipes" Member="Recipes">
+    <Type Name="Recipe">
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RecipeName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Servings" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PreparationMethod" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Remarks" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Source" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MediaLink" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Tools" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsApproved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Picture" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="VideoLink" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Tags" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DifficultyLevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PreperationTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CookingTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Recipe_UserFavoriteRecipe" Member="UserFavoriteRecipes" ThisKey="RecipeId" OtherKey="RecipeId" Type="UserFavoriteRecipe" />
+      <Association Name="Recipe_MenuRecipe" Member="MenuRecipes" ThisKey="RecipeId" OtherKey="RecipeId" Type="MenuRecipe" />
+      <Association Name="Recipe_MealRecipe" Member="MealRecipes" ThisKey="RecipeId" OtherKey="RecipeId" Type="MealRecipe" />
+      <Association Name="Recipe_RecipeCategory" Member="RecipeCategories" ThisKey="RecipeId" OtherKey="RecipeId" Type="RecipeCategory" />
+      <Association Name="Recipe_RecipesInShoppingList" Member="RecipesInShoppingLists" ThisKey="RecipeId" OtherKey="RECIPE_ID" Type="RecipesInShoppingList" />
+      <Association Name="Recipe_Ingredient" Member="Ingredients" ThisKey="RecipeId" OtherKey="RecipeId" Type="Ingredient" />
+      <Association Name="User_Recipe" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Menus" Member="Menus">
+    <Type Name="Menu">
+      <Column Name="MenuId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MenuName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="MenuTypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TempUserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Tags" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Picture" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="EmbeddedVideo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Menu_MenuRecipe" Member="MenuRecipes" ThisKey="MenuId" OtherKey="MenuId" Type="MenuRecipe" />
+      <Association Name="Menu_ShoppingListAdditionalItem" Member="ShoppingListAdditionalItems" ThisKey="MenuId" OtherKey="MenuId" Type="ShoppingListAdditionalItem" />
+      <Association Name="Menu_MenuCategory" Member="MenuCategories" ThisKey="MenuId" OtherKey="MenuId" Type="MenuCategory" />
+      <Association Name="Menu_UserFavoriteMenu" Member="UserFavoriteMenus" ThisKey="MenuId" OtherKey="MenuId" Type="UserFavoriteMenu" />
+      <Association Name="Menu_Meal" Member="Meals" ThisKey="MenuId" OtherKey="MenuId" Type="Meal" />
+      <Association Name="Menu_MenusInShoppingList" Member="MenusInShoppingLists" ThisKey="MenuId" OtherKey="MenuId" Type="MenusInShoppingList" />
+      <Association Name="MenuType_Menu" Member="MenuType" ThisKey="MenuTypeId" OtherKey="MenuTypeId" Type="MenuType" IsForeignKey="true" />
+      <Association Name="User_Menu" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserTypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="AgreeToMail" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="User_UserFavoriteRecipe" Member="UserFavoriteRecipes" ThisKey="UserId" OtherKey="UserId" Type="UserFavoriteRecipe" />
+      <Association Name="User_Recipe" Member="Recipes" ThisKey="UserId" OtherKey="UserId" Type="Recipe" />
+      <Association Name="User_Menu" Member="Menus" ThisKey="UserId" OtherKey="UserId" Type="Menu" />
+      <Association Name="User_UserFavoriteMenu" Member="UserFavoriteMenus" ThisKey="UserId" OtherKey="UserId" Type="UserFavoriteMenu" />
+      <Association Name="User_RecipesInShoppingList" Member="RecipesInShoppingLists" ThisKey="UserId" OtherKey="USER_ID" Type="RecipesInShoppingList" />
+      <Association Name="User_Food" Member="Foods" ThisKey="UserId" OtherKey="CreatedBy" Type="Food" />
+      <Association Name="User_Food1" Member="Foods1" ThisKey="UserId" OtherKey="ModifiedBy" Type="Food" />
+      <Association Name="User_MenusInShoppingList" Member="MenusInShoppingLists" ThisKey="UserId" OtherKey="UserId" Type="MenusInShoppingList" />
+      <Association Name="User_MissingList" Member="MissingLists" ThisKey="UserId" OtherKey="CREATED_BY" Type="MissingList" />
+      <Association Name="UserType_User" Member="UserType" ThisKey="UserTypeId" OtherKey="UserTypeId" Type="UserType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserFavoriteMenus" Member="UserFavoriteMenus">
+    <Type Name="UserFavoriteMenu">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MenuId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Menu_UserFavoriteMenu" Member="Menu" ThisKey="MenuId" OtherKey="MenuId" Type="Menu" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_UserFavoriteMenu" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Meals" Member="Meals">
+    <Type Name="Meal">
+      <Column Name="MealId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MenuId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MealTypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DayIndex" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CourseTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Diners" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="Meal_MealRecipe" Member="MealRecipes" ThisKey="MealId" OtherKey="MealId" Type="MealRecipe" />
+      <Association Name="CourseType_Meal" Member="CourseType" ThisKey="CourseTypeId" OtherKey="CourseTypeId" Type="CourseType" IsForeignKey="true" />
+      <Association Name="MealType_Meal" Member="MealType" ThisKey="MealTypeId" OtherKey="MealTypeId" Type="MealType" IsForeignKey="true" />
+      <Association Name="Menu_Meal" Member="Menu" ThisKey="MenuId" OtherKey="MenuId" Type="Menu" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GeneralList" Member="GeneralLists">
+    <Type Name="GeneralList">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LIST_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="GeneralList_GeneralListReciep" Member="GeneralListRecieps" ThisKey="ID" OtherKey="LIST_ID" Type="GeneralListReciep" />
+      <Association Name="GeneralList_GeneralListDetail" Member="GeneralListDetails" ThisKey="ID" OtherKey="LIST_ID" Type="GeneralListDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GeneralListRecieps" Member="GeneralListRecieps">
+    <Type Name="GeneralListReciep">
+      <Column Name="LIST_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RECIEP_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="GeneralList_GeneralListReciep" Member="GeneralList" ThisKey="LIST_ID" OtherKey="ID" Type="GeneralList" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GeneralListDetails" Member="GeneralListDetails">
+    <Type Name="GeneralListDetail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LIST_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ITEM_NAME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="COMPLETE_QUANTITY" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MEASUREMENT_UNIT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MEASUREMENT_UNIT" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="GeneralList_GeneralListDetail" Member="GeneralList" ThisKey="LIST_ID" OtherKey="ID" Type="GeneralList" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SummeryLists" Member="SummeryLists">
+    <Type Name="SummeryList">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CREATED_BY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SummeryList_SummeryListDetail" Member="SummeryListDetails" ThisKey="ID" OtherKey="LIST_ID" Type="SummeryListDetail" />
+      <Association Name="SummeryList_SummerySource" Member="SummerySources" ThisKey="ID" OtherKey="SUMMERY_ID" Type="SummerySource" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SummeryListDetails" Member="SummeryListDetails">
+    <Type Name="SummeryListDetail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LIST_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FOOD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FOOD_NAME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="QUANTITY" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="MEASUREMENT_UNIT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MEASUREMENT_UNIT" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="SummeryList_SummeryListDetail" Member="SummeryList" ThisKey="LIST_ID" OtherKey="ID" Type="SummeryList" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SummerySources" Member="SummerySources">
+    <Type Name="SummerySource">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SUMMERY_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SOURCE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FOOD_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="QUANTITY" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Association Name="SummeryList_SummerySource" Member="SummeryList" ThisKey="SUMMERY_ID" OtherKey="ID" Type="SummeryList" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RecipesView" Member="RecipesViews">
+    <Type Name="RecipesView">
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RecipeName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Servings" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PreparationMethod" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Remarks" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Source" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MediaLink" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Tools" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsApproved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Picture" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="VideoLink" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Tags" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DifficultyLevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PreperationTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CookingTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RecipesInShoppingList" Member="RecipesInShoppingLists">
+    <Type Name="RecipesInShoppingList">
+      <Column Name="RECIPE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SERVINGS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USER_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Recipe_RecipesInShoppingList" Member="Recipe" ThisKey="RECIPE_ID" OtherKey="RecipeId" Type="Recipe" IsForeignKey="true" />
+      <Association Name="User_RecipesInShoppingList" Member="User" ThisKey="USER_ID" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Food" Member="Foods">
+    <Type Name="Food">
+      <Column Name="FoodId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FoodName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="FoodCategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CalculateUnitId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsTemporary" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Remarks" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PrintPicture" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Picture" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Food_NutValue" Member="NutValues" ThisKey="FoodId" OtherKey="FoodId" Type="NutValue" />
+      <Association Name="Food_MissingListDetail" Member="MissingListDetails" ThisKey="FoodId" OtherKey="FOOD_ID" Type="MissingListDetail" />
+      <Association Name="Food_SavedListDetail" Member="SavedListDetails" ThisKey="FoodId" OtherKey="FOOD_ID" Type="SavedListDetail" />
+      <Association Name="Food_Ingredient" Member="Ingredients" ThisKey="FoodId" OtherKey="FoodId" Type="Ingredient" />
+      <Association Name="Food_MeasurementUnitsConvert" Member="MeasurementUnitsConverts" ThisKey="FoodId" OtherKey="FoodId" Type="MeasurementUnitsConvert" />
+      <Association Name="User_Food" Member="User" ThisKey="CreatedBy" OtherKey="UserId" Type="User" IsForeignKey="true" />
+      <Association Name="FoodCategory_Food" Member="FoodCategory" ThisKey="FoodCategoryId" OtherKey="FoodCategoryId" Type="FoodCategory" IsForeignKey="true" />
+      <Association Name="User_Food1" Member="User1" ThisKey="ModifiedBy" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NutValues" Member="NutValues">
+    <Type Name="NutValue">
+      <Column Name="FoodId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NutItemId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Food_NutValue" Member="Food" ThisKey="FoodId" OtherKey="FoodId" Type="Food" IsForeignKey="true" />
+      <Association Name="NutItem_NutValue" Member="NutItem" ThisKey="NutItemId" OtherKey="NutItemId" Type="NutItem" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MissingListDetails" Member="MissingListDetails">
+    <Type Name="MissingListDetail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LIST_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FOOD_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MEASUREMENT_UNIT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QUANTITY" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Food_MissingListDetail" Member="Food" ThisKey="FOOD_ID" OtherKey="FoodId" Type="Food" IsForeignKey="true" />
+      <Association Name="MissingList_MissingListDetail" Member="MissingList" ThisKey="LIST_ID" OtherKey="ID" Type="MissingList" IsForeignKey="true" />
+      <Association Name="MeasurementUnit_MissingListDetail" Member="MeasurementUnit" ThisKey="MEASUREMENT_UNIT_ID" OtherKey="UnitId" Type="MeasurementUnit" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MenusInShoppingList" Member="MenusInShoppingLists">
+    <Type Name="MenusInShoppingList">
+      <Column Name="MenuId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Menu_MenusInShoppingList" Member="Menu" ThisKey="MenuId" OtherKey="MenuId" Type="Menu" IsForeignKey="true" />
+      <Association Name="User_MenusInShoppingList" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SavedList" Member="SavedLists">
+    <Type Name="SavedList">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SHOPPING_LIST" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SavedList_SavedListDetail" Member="SavedListDetails" ThisKey="ID" OtherKey="LIST_ID" Type="SavedListDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SavedListDetails" Member="SavedListDetails">
+    <Type Name="SavedListDetail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LIST_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FOOD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MEASUREMENT_UNIT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QUANTITY" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Association Name="SavedList_SavedListDetail" Member="SavedList" ThisKey="LIST_ID" OtherKey="ID" Type="SavedList" IsForeignKey="true" />
+      <Association Name="Food_SavedListDetail" Member="Food" ThisKey="FOOD_ID" OtherKey="FoodId" Type="Food" IsForeignKey="true" />
+      <Association Name="MeasurementUnit_SavedListDetail" Member="MeasurementUnit" ThisKey="MEASUREMENT_UNIT_ID" OtherKey="UnitId" Type="MeasurementUnit" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ingredients" Member="Ingredients">
+    <Type Name="Ingredient">
+      <Column Name="IngredientId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FoodId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MeasurementUnitId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Remarks" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Recipe_Ingredient" Member="Recipe" ThisKey="RecipeId" OtherKey="RecipeId" Type="Recipe" IsForeignKey="true" />
+      <Association Name="Food_Ingredient" Member="Food" ThisKey="FoodId" OtherKey="FoodId" Type="Food" IsForeignKey="true" />
+      <Association Name="MeasurementUnit_Ingredient" Member="MeasurementUnit" ThisKey="MeasurementUnitId" OtherKey="UnitId" Type="MeasurementUnit" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MeasurementUnitsConverts" Member="MeasurementUnitsConverts">
+    <Type Name="MeasurementUnitsConvert">
+      <Column Name="ConvertId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FoodId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FromUnitId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FromQuantity" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ToUnitId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ToQuantity" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Food_MeasurementUnitsConvert" Member="Food" ThisKey="FoodId" OtherKey="FoodId" Type="Food" IsForeignKey="true" />
+      <Association Name="MeasurementUnit_MeasurementUnitsConvert" Member="MeasurementUnit" ThisKey="ToUnitId" OtherKey="UnitId" Type="MeasurementUnit" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MissingLists" Member="MissingLists">
+    <Type Name="MissingList">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CREATED_BY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="MissingList_MissingListDetail" Member="MissingListDetails" ThisKey="ID" OtherKey="LIST_ID" Type="MissingListDetail" />
+      <Association Name="User_MissingList" Member="User" ThisKey="CREATED_BY" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MeasurementUnits" Member="MeasurementUnits">
+    <Type Name="MeasurementUnit">
+      <Column Name="UnitId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UnitName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EnabledInShoppingList" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="MeasurementUnit_MissingListDetail" Member="MissingListDetails" ThisKey="UnitId" OtherKey="MEASUREMENT_UNIT_ID" Type="MissingListDetail" />
+      <Association Name="MeasurementUnit_SavedListDetail" Member="SavedListDetails" ThisKey="UnitId" OtherKey="MEASUREMENT_UNIT_ID" Type="SavedListDetail" />
+      <Association Name="MeasurementUnit_Ingredient" Member="Ingredients" ThisKey="UnitId" OtherKey="MeasurementUnitId" Type="Ingredient" />
+      <Association Name="MeasurementUnit_MeasurementUnitsConvert" Member="MeasurementUnitsConverts" ThisKey="UnitId" OtherKey="ToUnitId" Type="MeasurementUnitsConvert" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserShoppingList" Member="UserShoppingLists">
+    <Type Name="UserShoppingList">
+      <Column Name="FOOD_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FOOD_NAME" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MEASURMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MEASUREMENT_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="QUANTITY" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="CATEGORY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CATEGORY_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="USER_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CAN_DELETE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IMAGE" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>

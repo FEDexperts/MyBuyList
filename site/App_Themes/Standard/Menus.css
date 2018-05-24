@@ -1,0 +1,80 @@
+﻿#menus-wrapper{
+
+}
+    #menus-wrapper div.header {
+        padding: 50px 8px 0px 17px;
+        font-size: 13px;
+    }
+    #menus-wrapper div.menu-list {
+        /*padding: 50px 8px 0px 17px;*/
+        font-size: 13px;
+        float: right;
+        width: 669px;
+    }
+    #menus-wrapper div.ShoppingList {
+        float: left;
+        width: 270px;
+        margin-right: 10px;
+    }
+.menu_box
+{    
+    background-image: url('../../Images/bgr_IndexBox_Menu.gif');
+    background-repeat: no-repeat;    
+    background-position: center top;
+    height: 265px;
+    margin-bottom: 10px;
+    /*padding: 15px 10px 20px 10px;*/    
+    font-size: 12px;
+    width: 700px;
+}
+.menu_inner_box
+{     
+    width: 514px;
+    float: right;
+    clear: both;
+}
+.menu_tags
+{
+    clear: both;
+    margin-top: 10px;
+    font-weight: bold;
+    color: black;      
+}
+
+.menu_main_category
+{
+    text-align: center;    
+    font-size: 16px;
+    font-weight: bold;
+    color: #FCAB14;
+    float: left;     
+    padding-right: 19px;
+    padding-left: 9px; 
+    width: 72px;     
+    margin-top: 14px; 
+}
+.menu_title
+{
+    float: right;
+    font-size:14px;
+}
+.menu_title a
+{
+    font-weight: bold;
+    color: #FCAB14;
+    text-decoration: none;
+}
+a.menu_published_value
+{
+    color: #FBAA13;
+    text-decoration: none;
+}
+a.menu_published_value:hover
+{
+    color: #FBAA13;
+    text-decoration: underline;
+}
+.menu_published_value
+{
+    color: #FBAA13;
+}

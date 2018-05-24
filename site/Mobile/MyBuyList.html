@@ -1,0 +1,618 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>MyBuyList</title>
+    <meta name="generator" content=
+      "MobiOne Studio - Design Center (2.6.2.201408151938), http://genuitec.com/mobile"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="viewport" content=
+      "minimal-ui, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" href="MyBuyList.css"/>
+    <link rel="stylesheet" href="res/spinningwheel.css"/>
+    <link rel="stylesheet" href="Hebrew.css"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script type="text/javascript" src="rte/cordova.js"></script>
+    <script type="text/javascript" src="rte/rte.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="General.js"></script>
+    <script type="text/javascript" src="DataManager.js"></script>
+    <script type="text/javascript" src="ShoppingList.js"></script>
+    <script type="text/javascript" src="res/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="res/iscroll.js"></script>
+    <script type="text/javascript" src="MyBuyList.js"></script>
+    <script type="text/javascript" src="res/phoneui.js"></script>
+    <script type="text/javascript" src="res/spinningwheel.js"></script>
+    <script type="text/javascript" src="MyBuyList_custom.js"></script>
+    <script type="text/javascript" src="User.js"></script>
+    <script type="text/javascript" src="SearchItems.js"></script>
+    <script type="text/javascript" src="Missing.js"></script>
+    <script type="text/javascript" src="SavedList.js"></script>
+    <script type="text/javascript" src="Recipes.js"></script>
+    <script type="text/javascript" src="Menus.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="apple-touch-icon" href="images/mybuylist.png"/>
+  </head>
+  <body>
+    <div class="m1-top-root">
+      <!-- Loading spinner  -->
+      <div class="m1-loading">
+        <div>
+          <canvas class="m1-loading-spinner" width="25" height="25"></canvas>
+          <span class="m1-loading-text"></span>
+        </div>
+      </div>
+      <!-- Prompt to be shown for adding page on homescreen  -->
+      <canvas class="m1-homescreen-prompt" width="250" height="120"></canvas>
+      <!-- ***** MyBuyList *****  -->
+      <div id="m1-MyBuyList" class="m1-root m1-background-2">
+        <div id="m1-MyBuyList-text1" class="m1-text m1-shadow-3 m1-font-34">טוען פריטים...</div>
+      </div>
+      <!-- ***** Lists *****  -->
+      <div id="m1-Lists" class="m1-root m1-background-1">
+        <div id="m1-Lists-multiPage1" class="m1-multipanel" data-action-changed-id="action5">
+          <div id="m1-Lists-pageShoppingList" class="m1-selected m1-multipanel-page">
+            <div id="m1-Lists-pageShoppingList-box" 
+              class="m1-iscroll-wrapper m1-background-1 m1-border-1">
+              <div id="m1-Lists-tabBar3" class="m1-tabbar m1-background-3" data-attached-multibox=
+                "m1-Lists-multiPage3">
+                <div id="m1-Lists-tabBar3-pageAlfabet" 
+                  class="m1-selected m1-tabbar-button m1-clickable m1-background-4 m1-border-2 m1-font-1 m1-font-2"
+                  data-action-click-id="action10" data-attached-multiboxpage="m1-Lists-pageAlfabet">
+                  <img id="m1-Lists-tabBar3-pageAlfabet-img" class="m1-image"/>
+                  <label id="m1-Lists-tabBar3-pageAlfabet-label" class="m1-tabbar-button-label"
+                    >א-ב</label>
+                </div>
+                <div id="m1-Lists-tabBar3-pageCategories" 
+                  class="m1-tabbar-button m1-clickable m1-background-4 m1-border-2 m1-font-1 m1-font-2"
+                  data-action-click-id="action11" data-attached-multiboxpage=
+                  "m1-Lists-pageCategories">
+                  <img id="m1-Lists-tabBar3-pageCategories-img" class="m1-image"/>
+                  <label id="m1-Lists-tabBar3-pageCategories-label" class="m1-tabbar-button-label"
+                    >קטגוריות</label>
+                </div>
+              </div>
+              <div id="m1-Lists-multiPage3" class="m1-multipanel" data-action-changed-id="action12">
+                <div id="m1-Lists-pageAlfabet" class="m1-selected m1-multipanel-page">
+                  <div id="m1-Lists-pageAlfabet-box" 
+                    class="m1-iscroll-wrapper m1-background-1 m1-border-1">
+                    <div id="m1-Lists-panel1" class="m1-iscroll-wrapper m1-border-1 m1-background-5"
+                      >
+                      <div id="m1-Lists-panel1-scroller" class="m1-iscroll-scroller" data-bounce=
+                        "true">
+                        <ul id="m1-Lists-AlfabetShoppingList" class="m1-plain-list m1-list">
+                          <li id="m1-Lists-ShoppingListItem" 
+                            class="m1-first m1-last m1-clickable m1-highlight m1-background-6 m1-background-7 m1-background-8"
+                            >
+                            <div id="m1-Lists-checkbox1" class="m1-checkbox m1-font-3">
+                              <input type="checkbox" name="checkbox1"/>
+                            </div>
+                            <div id="m1-Lists-text3" class="m1-text m1-font-4 m1-active-color-1"
+                              >Item</div>
+                            <div id="m1-Lists-txtQuntity" 
+                              class="m1-text m1-active-color-1 m1-font-5">Text</div>
+                            <img id="m1-Lists-image1" class="m1-clickable m1-image"/>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="m1-Lists-pageCategories" class="m1-multipanel-page">
+                  <div id="m1-Lists-pageCategories-box" 
+                    class="m1-iscroll-wrapper m1-background-1 m1-border-1">
+                    <div id="m1-Lists-panel8" class="m1-iscroll-wrapper m1-border-1 m1-background-5"
+                      >
+                      <div id="m1-Lists-panel8-scroller" class="m1-iscroll-scroller" data-bounce=
+                        "true">
+                        <ul id="m1-Lists-ItemsList" class="m1-plain-list m1-list">
+                          <li id="m1-Lists-CategoryTitle" class="m1-list-header m1-background-9">
+                            <label id="m1-Lists-CategoryTitle-label" class="m1-font-6 m1-shadow-1"
+                              >Header - double-click to edit</label>
+                          </li>
+                          <li id="m1-Lists-Item" 
+                            class="m1-first m1-last m1-clickable m1-highlight m1-background-6 m1-background-7 m1-background-8"
+                            >
+                            <div id="m1-Lists-Name" class="m1-text m1-active-color-1 m1-font-7"
+                              >Item</div>
+                            <div id="m1-Lists-Quantity" class="m1-text m1-active-color-1 m1-font-8"
+                              >Text</div>
+                            <div id="m1-Lists-Check" class="m1-checkbox m1-font-3">
+                              <input type="checkbox" checked="true" name="Check"/>
+                            </div>
+                            <img id="m1-Lists-Image" class="m1-clickable m1-image"/>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="m1-Lists-pageMenus" class="m1-multipanel-page">
+            <div id="m1-Lists-pageMenus-box" class="m1-iscroll-wrapper m1-background-1 m1-border-1">
+              <div id="m1-Lists-tabBar4" class="m1-tabbar m1-background-10" data-attached-multibox=
+                "m1-Lists-multiPage4">
+                <div id="m1-Lists-tabBar4-pageSelectedMenus" 
+                  class="m1-selected m1-tabbar-button m1-clickable m1-border-2 m1-background-11 m1-font-9 m1-font-10"
+                  data-action-click-id="action22" data-attached-multiboxpage=
+                  "m1-Lists-pageSelectedMenus">
+                  <img id="m1-Lists-tabBar4-pageSelectedMenus-img" class="m1-image" src=
+                    "images/Action-view-choose-icon.png"/>
+                  <label id="m1-Lists-tabBar4-pageSelectedMenus-label" 
+                    class="m1-tabbar-button-label">תפריטים בסל</label>
+                </div>
+                <div id="m1-Lists-tabBar4-pageSearchMenus" 
+                  class="m1-tabbar-button m1-clickable m1-border-2 m1-background-11 m1-font-9 m1-font-10"
+                  data-action-click-id="action23" data-attached-multiboxpage=
+                  "m1-Lists-pageSearchMenus">
+                  <img id="m1-Lists-tabBar4-pageSearchMenus-img" class="m1-image" src=
+                    "images/chart-search-icon.png"/>
+                  <label id="m1-Lists-tabBar4-pageSearchMenus-label" class="m1-tabbar-button-label"
+                    >חיפוש תפריטים</label>
+                </div>
+              </div>
+              <div id="m1-Lists-multiPage4" class="m1-multipanel" data-action-changed-id="action24">
+                <div id="m1-Lists-pageSelectedMenus" class="m1-selected m1-multipanel-page">
+                  <div id="m1-Lists-pageSelectedMenus-box" 
+                    class="m1-iscroll-wrapper m1-background-1 m1-border-1">
+                    <div id="m1-Lists-panel5" class="m1-iscroll-wrapper m1-border-1 m1-background-5"
+                      >
+                      <div id="m1-Lists-panel5-scroller" class="m1-iscroll-scroller" data-bounce=
+                        "true">
+                        <ul id="m1-Lists-SelectedMenus" class="m1-plain-list m1-list">
+                          <li id="m1-Lists-listSelectedMenuItem" 
+                            class="m1-first m1-last m1-clickable m1-highlight m1-background-6 m1-background-7 m1-background-8"
+                            >
+                            <div id="m1-Lists-txtMenuName" 
+                              class="m1-text m1-active-color-1 m1-font-11">Item</div>
+                            <img id="m1-Lists-btnRemoveMenu" class="m1-clickable m1-image" src=
+                              "images/yellow-cross-icon.png"/>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="m1-Lists-pageSearchMenus" class="m1-multipanel-page">
+                  <div id="m1-Lists-pageSearchMenus-box" 
+                    class="m1-iscroll-wrapper m1-background-1 m1-border-1">
+                    <input id="m1-Lists-txtSearchedMenu" 
+                      class="m1-textfield m1-textfield-border m1-font-12" value="" type="text" name=
+                      "txtSearchedMenu"/>
+                    <div id="m1-Lists-btnSearchMenu" 
+                      class="m1-clickable m1-button m1-font-13 m1-btn-1 m1-btn-2" name=
+                      "btnSearchMenu">חפש</div>
+                    <div id="m1-Lists-panel6" class="m1-iscroll-wrapper m1-border-1 m1-background-5"
+                      >
+                      <div id="m1-Lists-panel6-scroller" class="m1-iscroll-scroller" data-bounce=
+                        "true">
+                        <ul id="m1-Lists-SearchedMenus" class="m1-plain-list m1-list">
+                          <li id="m1-Lists-listMenuItem" 
+                            class="m1-first m1-last m1-clickable m1-highlight m1-background-6 m1-background-7 m1-background-8"
+                            >
+                            <div id="m1-Lists-checkbox4" class="m1-checkbox m1-font-3">
+                              <input type="checkbox" name="checkbox4"/>
+                            </div>
+                            <div id="m1-Lists-txtMenuName2" 
+                              class="m1-text m1-active-color-1 m1-font-11">Item</div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="m1-Lists-pageRecipes" class="m1-multipanel-page">
+            <div id="m1-Lists-pageRecipes-box" 
+              class="m1-iscroll-wrapper m1-background-1 m1-border-1">
+              <div id="m1-Lists-tabBar2" class="m1-tabbar m1-background-3" data-attached-multibox=
+                "m1-Lists-multiPage2">
+                <div id="m1-Lists-tabBar2-pageSelectedRecipes" 
+                  class="m1-selected m1-tabbar-button m1-clickable m1-background-4 m1-border-2 m1-font-9 m1-font-10"
+                  data-action-click-id="action14" data-attached-multiboxpage=
+                  "m1-Lists-pageSelectedRecipes">
+                  <img id="m1-Lists-tabBar2-pageSelectedRecipes-img" class="m1-image"/>
+                  <label id="m1-Lists-tabBar2-pageSelectedRecipes-label" 
+                    class="m1-tabbar-button-label">מתכונים בסל</label>
+                </div>
+                <div id="m1-Lists-tabBar2-pageSearchRecipes" 
+                  class="m1-tabbar-button m1-clickable m1-background-4 m1-border-2 m1-font-9 m1-font-10"
+                  data-action-click-id="action15" data-attached-multiboxpage=
+                  "m1-Lists-pageSearchRecipes">
+                  <img id="m1-Lists-tabBar2-pageSearchRecipes-img" class="m1-image"/>
+                  <label id="m1-Lists-tabBar2-pageSearchRecipes-label" 
+                    class="m1-tabbar-button-label">חיפוש מתכונים</label>
+                </div>
+              </div>
+              <div id="m1-Lists-multiPage2" class="m1-multipanel" data-action-changed-id="action9">
+                <div id="m1-Lists-pageSelectedRecipes" class="m1-selected m1-multipanel-page">
+                  <div id="m1-Lists-pageSelectedRecipes-box" 
+                    class="m1-iscroll-wrapper m1-background-1 m1-border-3">
+                    <div id="m1-Lists-panel4" class="m1-iscroll-wrapper m1-border-1 m1-background-5"
+                      >
+                      <div id="m1-Lists-panel4-scroller" class="m1-iscroll-scroller" data-bounce=
+                        "true">
+                        <ul id="m1-Lists-listSelectedRecipes" class="m1-plain-list m1-list">
+                          <li id="m1-Lists-listSelectedRecipesItem" 
+                            class="m1-first m1-last m1-clickable m1-highlight m1-background-6 m1-background-7 m1-background-8"
+                            >
+                            <img id="m1-Lists-RemoveRecipe" class="m1-clickable m1-image" src=
+                              "images/green-cross-icon.png"/>
+                            <div id="m1-Lists-txtRecipeName" 
+                              class="m1-text m1-font-4 m1-active-color-1">Item</div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="m1-Lists-pageSearchRecipes" class="m1-multipanel-page">
+                  <div id="m1-Lists-pageSearchRecipes-box" 
+                    class="m1-iscroll-wrapper m1-background-1 m1-border-3">
+                    <input id="m1-Lists-txtSearchValue" 
+                      class="m1-textfield m1-textfield-border m1-font-12" value="" type="text" name=
+                      "txtSearchValue"/>
+                    <div id="m1-Lists-SearchRecipes" 
+                      class="m1-clickable m1-button m1-font-13 m1-btn-1 m1-btn-2" name=
+                      "SearchRecipes">חפש</div>
+                    <div id="m1-Lists-SearchRecipesPanel" 
+                      class="m1-iscroll-wrapper m1-border-1 m1-background-5">
+                      <div id="m1-Lists-SearchRecipesPanel-scroller" class="m1-iscroll-scroller" 
+                        data-bounce="true">
+                        <ul id="m1-Lists-listRecipes" class="m1-plain-list m1-list">
+                          <li id="m1-Lists-listItemRecipes" 
+                            class="m1-first m1-last m1-clickable m1-highlight m1-background-6 m1-background-7 m1-background-8"
+                            >
+                            <div id="m1-Lists-txtServings" 
+                              class="m1-text m1-active-color-1 m1-font-14">Text</div>
+                            <div id="m1-Lists-SearchedRecipeItem" 
+                              class="m1-text m1-font-4 m1-active-color-1">Item</div>
+                            <div id="m1-Lists-CheckRecipe" class="m1-checkbox m1-font-3">
+                              <input type="checkbox" name="CheckRecipe"/>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div id="m1-Lists-text4" class="m1-text m1-font-15 m1-shadow-2"
+                      >הוסף לרשימת קניות</div>
+                    <div id="m1-Lists-text8" class="m1-text m1-font-15 m1-shadow-2">נקה רשימה</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="m1-Lists-pageSavedList" class="m1-multipanel-page">
+            <div id="m1-Lists-pageSavedList-box" 
+              class="m1-iscroll-wrapper m1-background-1 m1-border-1">
+              <div id="m1-Lists-tabBar5" class="m1-tabbar m1-background-10" data-attached-multibox=
+                "m1-Lists-multiPage5">
+                <div id="m1-Lists-tabBar5-pageMySavedLists" 
+                  class="m1-selected m1-tabbar-button m1-clickable m1-border-2 m1-background-11 m1-font-9 m1-font-10"
+                  data-action-click-id="action25" data-attached-multiboxpage=
+                  "m1-Lists-pageMySavedLists">
+                  <img id="m1-Lists-tabBar5-pageMySavedLists-img" class="m1-image" src=
+                    "images/Age-Child-Male-Light-icon.png"/>
+                  <label id="m1-Lists-tabBar5-pageMySavedLists-label" class="m1-tabbar-button-label"
+                    >הרשימות שלי</label>
+                </div>
+                <div id="m1-Lists-tabBar5-pageNewSavedList" 
+                  class="m1-tabbar-button m1-clickable m1-border-2 m1-background-11 m1-font-9 m1-font-10"
+                  data-action-click-id="action26" data-attached-multiboxpage=
+                  "m1-Lists-pageNewSavedList">
+                  <img id="m1-Lists-tabBar5-pageNewSavedList-img" class="m1-image" src=
+                    "images/Actions-appointment-new-icon.png"/>
+                  <label id="m1-Lists-tabBar5-pageNewSavedList-label" class="m1-tabbar-button-label"
+                    >רשימה חדשה</label>
+                </div>
+              </div>
+              <div id="m1-Lists-multiPage5" class="m1-multipanel" data-action-changed-id="action32">
+                <div id="m1-Lists-pageMySavedLists" class="m1-selected m1-multipanel-page">
+                  <div id="m1-Lists-pageMySavedLists-box" 
+                    class="m1-iscroll-wrapper m1-background-1 m1-border-1">
+                    <div id="m1-Lists-comboboxSavedLists" 
+                      class="m1-select-list-menu-spinner m1-soft-spinner m1-iscroll-no-prevent-default m1-combobox m1-font-16 m1-btn-3 m1-btn-4"
+                      name="comboboxSavedLists" data-hiddenInputId=
+                      "m1-Lists-hidden-select-comboboxSavedLists" data-selectionInfoId=
+                      "m1-Lists-comboboxSavedLists" data-multiple="false" data-verbose-items-info=
+                      "true"></div>
+                    <div id="m1-Lists-panel7" class="m1-iscroll-wrapper m1-border-1 m1-background-5"
+                      >
+                      <div id="m1-Lists-panel7-scroller" class="m1-iscroll-scroller" data-bounce=
+                        "true">
+                        <ul id="m1-Lists-MySavedList" class="m1-plain-list m1-list">
+                          <li id="m1-Lists-listMySavedListItem" 
+                            class="m1-first m1-last m1-clickable m1-highlight m1-background-6 m1-background-7 m1-background-8"
+                            >
+                            <div id="m1-Lists-txtSavedItem" 
+                              class="m1-text m1-active-color-1 m1-font-11">Item</div>
+                            <input id="m1-Lists-SavedItemQuantity" 
+                              class="m1-textfield m1-textfield-border m1-font-17" value="" type=
+                              "number" name="SavedItemQuantity"/>
+                            <img id="m1-Lists-btnDeleteSavedItem" class="m1-clickable m1-image" src=
+                              "images/blue-cross-icon.png"/>
+                            <div id="m1-Lists-MySavedListItemUnit" 
+                              class="m1-text m1-active-color-1 m1-font-18">Text</div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div id="m1-Lists-checkbox5" class="m1-checkbox m1-font-3">
+                      <input type="checkbox" name="checkbox5"/>
+                    </div>
+                    <div id="m1-Lists-text7" class="m1-text m1-font-19">בסל הקניות</div>
+                    <img id="m1-Lists-MySavedListAddItems" class="m1-clickable m1-image" src=
+                      "images/basket-add-icon%20%281%29.png"/>
+                    <div id="m1-Lists-DeleteMySaveList" 
+                      class="m1-clickable m1-button m1-font-20 m1-btn-5 m1-btn-6" name=
+                      "DeleteMySaveList">מחק רשימה</div>
+                  </div>
+                </div>
+                <div id="m1-Lists-pageNewSavedList" class="m1-multipanel-page">
+                  <div id="m1-Lists-pageNewSavedList-box" 
+                    class="m1-iscroll-wrapper m1-background-1 m1-border-1">
+                    <div id="m1-Lists-panelNewSavedList" 
+                      class="m1-iscroll-wrapper m1-border-1 m1-background-5">
+                      <div id="m1-Lists-panelNewSavedList-scroller" class="m1-iscroll-scroller" 
+                        data-bounce="true">
+                        <ul id="m1-Lists-NewSavedList" class="m1-plain-list m1-list">
+                          <li id="m1-Lists-listItem1" 
+                            class="m1-first m1-last m1-clickable m1-highlight m1-background-6 m1-background-7 m1-background-8"
+                            >
+                            <div id="m1-Lists-NewSavedItemName" 
+                              class="m1-text m1-active-color-1 m1-font-21">Item</div>
+                            <div id="m1-Lists-NewSavedItemQuantity" 
+                              class="m1-text m1-active-color-1 m1-font-22">Text</div>
+                            <img id="m1-Lists-btnRemoveNewSavedItem" class="m1-clickable m1-image" 
+                              src="images/yellow-cross-icon.png"/>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div id="m1-Lists-text5" class="m1-text m1-font-7">שם הרשימה</div>
+                    <input id="m1-Lists-txtSavedListName" 
+                      class="m1-textfield m1-textfield-border m1-font-12" value="" type="text" name=
+                      "txtSavedListName"/>
+                    <img id="m1-Lists-SavedListAddItems" class="m1-clickable m1-image" src=
+                      "images/basket-add-icon%20%281%29.png"/>
+                    <div id="m1-Lists-btnNewSavedList" 
+                      class="m1-clickable m1-button m1-font-20 m1-btn-5 m1-btn-6" name=
+                      "btnNewSavedList">נקה רשימה</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="m1-Lists-pageMissingsList" class="m1-multipanel-page">
+            <div id="m1-Lists-pageMissingsList-box" 
+              class="m1-iscroll-wrapper m1-background-1 m1-border-1">
+              <div id="m1-Lists-panel3" class="m1-iscroll-wrapper m1-border-1 m1-background-5">
+                <div id="m1-Lists-panel3-scroller" class="m1-iscroll-scroller" data-bounce="true">
+                  <ul id="m1-Lists-listMissing" class="m1-plain-list m1-list">
+                    <li id="m1-Lists-listMissingItem" 
+                      class="m1-first m1-last m1-clickable m1-highlight m1-background-6 m1-background-7 m1-background-8"
+                      >
+                      <img id="m1-Lists-btnDelete" class="m1-clickable m1-image" src=
+                        "images/red-cross-icon.png"/>
+                      <input id="m1-Lists-MissingQuantity" 
+                        class="m1-textfield m1-textfield-border m1-font-23" value="" type="number" 
+                        name="MissingQuantity"/>
+                      <div id="m1-Lists-MissingItemUnit" 
+                        class="m1-text m1-active-color-1 m1-font-14">Text</div>
+                      <div id="m1-Lists-txtMissingItem" class="m1-text m1-font-4 m1-active-color-1"
+                        >Item</div>
+                      <img id="m1-Lists-image2" class="m1-clickable m1-image"/>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="m1-Lists-text1" class="m1-text m1-shadow-2 m1-font-24">הוסף מוצר</div>
+              <div id="m1-Lists-text2" class="m1-text m1-shadow-2 m1-font-24">נקה רשימה</div>
+            </div>
+          </div>
+        </div>
+        <div class="m1-aux-hidden-div">
+          <select id="m1-Lists-hidden-select-comboboxSavedLists" name="comboboxSavedLists">
+            <option value="value1" label="" selected=""></option>
+            <option value="value2" label=""></option>
+            <option value="value3" label=""></option>
+            <option value="value4" label=""></option>
+            <option value="value5" label=""></option>
+          </select>
+        </div>
+        <div id="m1-Lists-tabBar1" class="m1-tabbar m1-background-3" data-attached-multibox=
+          "m1-Lists-multiPage1">
+          <div id="m1-Lists-tabBar1-pageShoppingList" 
+            class="m1-selected m1-tabbar-button m1-clickable m1-background-4 m1-border-2 m1-font-10 m1-font-25"
+            data-action-click-id="action13" data-attached-multiboxpage="m1-Lists-pageShoppingList">
+            <img id="m1-Lists-tabBar1-pageShoppingList-img" class="m1-image" src=
+              "images/shopping-cart-icon.png"/>
+            <label id="m1-Lists-tabBar1-pageShoppingList-label" class="m1-tabbar-button-label"
+              >סל קניות</label>
+          </div>
+          <div id="m1-Lists-tabBar1-pageMenus" 
+            class="m1-tabbar-button m1-clickable m1-background-4 m1-border-2 m1-font-10 m1-font-25" 
+            data-action-click-id="action18" data-attached-multiboxpage="m1-Lists-pageMenus">
+            <img id="m1-Lists-tabBar1-pageMenus-img" class="m1-image" src=
+              "images/yellow-notes-icon.png"/>
+            <label id="m1-Lists-tabBar1-pageMenus-label" class="m1-tabbar-button-label"
+              >תפריטים</label>
+          </div>
+          <div id="m1-Lists-tabBar1-pageRecipes" 
+            class="m1-tabbar-button m1-clickable m1-background-4 m1-border-2 m1-font-10 m1-font-25" 
+            data-action-click-id="action17" data-attached-multiboxpage="m1-Lists-pageRecipes">
+            <img id="m1-Lists-tabBar1-pageRecipes-img" class="m1-image" src=
+              "images/green-notes-icon.png"/>
+            <label id="m1-Lists-tabBar1-pageRecipes-label" class="m1-tabbar-button-label"
+              >מתכונים</label>
+          </div>
+          <div id="m1-Lists-tabBar1-pageSavedList" 
+            class="m1-tabbar-button m1-clickable m1-background-4 m1-border-2 m1-font-10 m1-font-25" 
+            data-action-click-id="action21" data-attached-multiboxpage="m1-Lists-pageSavedList">
+            <img id="m1-Lists-tabBar1-pageSavedList-img" class="m1-image" src=
+              "images/blue-notes-icon.png"/>
+            <label id="m1-Lists-tabBar1-pageSavedList-label" class="m1-tabbar-button-label"
+              >קבוע לבית</label>
+          </div>
+          <div id="m1-Lists-tabBar1-pageMissingsList" 
+            class="m1-tabbar-button m1-clickable m1-background-4 m1-border-2 m1-font-10 m1-font-25" 
+            data-action-click-id="action16" data-attached-multiboxpage="m1-Lists-pageMissingsList">
+            <img id="m1-Lists-tabBar1-pageMissingsList-img" class="m1-image" src=
+              "images/red-notes-icon.png"/>
+            <label id="m1-Lists-tabBar1-pageMissingsList-label" class="m1-tabbar-button-label"
+              >חסר בבית</label>
+          </div>
+        </div>
+        <div id="m1-Lists-WelcomeName" class="m1-text m1-font-26 m1-shadow-3">שלום אורח</div>
+        <div id="m1-images-preloader" class="m1-preload-images-1"></div>
+      </div>
+      <!-- ***** Recipe *****  -->
+      <div id="m1-Recipe" class="m1-root m1-background-1">
+        <div id="m1-Recipe-tabBar1" class="m1-tabbar m1-background-3" data-attached-multibox=
+          "m1-Recipe-multiPage1">
+          <div id="m1-Recipe-tabBar1-pageIngredients" 
+            class="m1-selected m1-tabbar-button m1-clickable m1-background-4 m1-border-2 m1-font-9 m1-font-10"
+            data-action-click-id="action30" data-attached-multiboxpage="m1-Recipe-pageIngredients">
+            <img id="m1-Recipe-tabBar1-pageIngredients-img" class="m1-image"/>
+            <label id="m1-Recipe-tabBar1-pageIngredients-label" class="m1-tabbar-button-label"
+              >מצרכים</label>
+          </div>
+          <div id="m1-Recipe-tabBar1-pagePreparationMethod" 
+            class="m1-tabbar-button m1-clickable m1-background-4 m1-border-2 m1-font-9 m1-font-10" 
+            data-action-click-id="action31" data-attached-multiboxpage=
+            "m1-Recipe-pagePreparationMethod">
+            <img id="m1-Recipe-tabBar1-pagePreparationMethod-img" class="m1-image"/>
+            <label id="m1-Recipe-tabBar1-pagePreparationMethod-label" class="m1-tabbar-button-label"
+              >אופן ההכנה</label>
+          </div>
+        </div>
+        <div id="m1-Recipe-multiPage1" class="m1-multipanel">
+          <div id="m1-Recipe-pageIngredients" class="m1-selected m1-multipanel-page">
+            <div id="m1-Recipe-pageIngredients-box" 
+              class="m1-iscroll-wrapper m1-background-1 m1-border-1">
+              <div id="m1-Recipe-pageIngredients-box-scroller" class="m1-iscroll-scroller" 
+                data-bounce="true">
+                <ul id="m1-Recipe-listIngredients" class="m1-plain-list m1-list">
+                  <li id="m1-Recipe-listIngredientsItem" 
+                    class="m1-first m1-last m1-clickable m1-highlight m1-background-6 m1-background-7 m1-background-8"
+                    >
+                    <div id="m1-Recipe-txtIngredientName" 
+                      class="m1-text m1-font-4 m1-active-color-1">Item</div>
+                    <div id="m1-Recipe-txrQuantity" class="m1-text m1-active-color-1 m1-font-27"
+                      >Text</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="m1-Recipe-pagePreparationMethod" class="m1-multipanel-page">
+            <div id="m1-Recipe-pagePreparationMethod-box" 
+              class="m1-iscroll-wrapper m1-background-1 m1-border-1">
+              <div id="m1-Recipe-pagePreparationMethod-box-scroller" class="m1-iscroll-scroller" 
+                data-bounce="true">
+                <textarea id="m1-Recipe-txtPrepareMethod" 
+                  class="m1-textarea m1-textfield m1-iscroll-no-prevent-default m1-font-28" name=
+                  "txtPrepareMethod" wrap="soft"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="m1-Recipe-txtRecipeName" class="m1-text m1-font-29">Text</div>
+        <div id="m1-Recipe-checkbox1" class="m1-checkbox m1-font-3">
+          <input type="checkbox" name="checkbox1"/>
+        </div>
+        <div id="m1-Recipe-text1" class="m1-text m1-font-19 m1-shadow-3">ברשימת הקניות</div>
+        <div id="m1-Recipe-btnBack" class="m1-clickable m1-button m1-font-30 m1-btn-7 m1-btn-8" name
+          ="btnBack" data-action-click-id="action27">חזרה</div>
+        <div id="m1-images-preloader2" class="m1-preload-images-2"></div>
+      </div>
+      <!-- ***** AddFood *****  -->
+      <div id="m1-AddFood" class="m1-root m1-background-1">
+        <div id="m1-AddFood-panel1" class="m1-iscroll-wrapper m1-border-1 m1-background-5">
+          <div id="m1-AddFood-panel1-scroller" class="m1-iscroll-scroller" data-bounce="true">
+            <ul id="m1-AddFood-Results" class="m1-plain-list m1-list">
+              <li id="m1-AddFood-ResultItem" 
+                class="m1-first m1-last m1-clickable m1-highlight m1-background-6 m1-background-7 m1-background-8"
+                >
+                <img id="m1-AddFood-ItemImage" class="m1-clickable m1-image"/>
+                <div id="m1-AddFood-ItemName" class="m1-text m1-active-color-1 m1-font-28"
+                  >Item</div>
+                <input id="m1-AddFood-ItemQuantity" 
+                  class="m1-textfield m1-textfield-border m1-font-17" value="" type="number" name=
+                  "ItemQuantity"/>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="m1-AddFood-btnAddItems" 
+          class="m1-clickable m1-button m1-font-20 m1-btn-9 m1-btn-10" name="btnAddItems">הוסף</div>
+        <div id="m1-AddFood-toolbar1" class="m1-toolbar m1-background-12">
+          <div id="m1-AddFood-push1" class="m1-clickable m1-button m1-font-20 m1-btn-11 m1-btn-12" 
+            name="push1" data-action-click-id="action36">ביטול</div>
+          <input id="m1-AddFood-txtSearchedItem" class="m1-textfield m1-textfield-border m1-font-12"
+            value="" type="text" name="txtSearchedItem"/>
+        </div>
+        <div id="m1-images-preloader3" class="m1-preload-images-3"></div>
+      </div>
+      <!-- ***** NewUser *****  -->
+      <div id="m1-NewUser" class="m1-root m1-background-1">
+        <div id="m1-NewUser-text1" class="m1-text m1-font-3 m1-shadow-3">שם משתמש</div>
+        <input id="m1-NewUser-UserName" class="m1-textfield m1-textfield-border m1-font-12" value=""
+          type="text" name="UserName"/>
+        <div id="m1-NewUser-text2" class="m1-text m1-font-3 m1-shadow-3">סיסמה</div>
+        <input id="m1-NewUser-Password" class="m1-textfield m1-textfield-border m1-font-12" value=""
+          type="password" name="Password"/>
+        <div id="m1-NewUser-text3" class="m1-text m1-font-3 m1-shadow-3">דוא"ל</div>
+        <input id="m1-NewUser-Email" class="m1-textfield m1-textfield-border m1-font-12" value="" 
+          type="email" name="Email"/>
+        <div id="m1-NewUser-text4" class="m1-text m1-shadow-3 m1-font-31">משתמש חדש</div>
+        <div id="m1-NewUser-Save" 
+          class="m1-clickable m1-button m1-font-32 m1-background-13 m1-background-14 m1-active-color-2"
+          name="Save">אישור</div>
+        <div id="m1-NewUser-custom2" 
+          class="m1-clickable m1-button m1-font-32 m1-background-13 m1-background-14 m1-active-color-2"
+          name="custom2" data-action-click-id="action37">ביטול</div>
+        <div id="m1-NewUser-text6" class="m1-text m1-font-3 m1-shadow-3">שם פרטי</div>
+        <input id="m1-NewUser-FirstName" class="m1-textfield m1-textfield-border m1-font-12" value=
+          "" type="text" name="FirstName"/>
+        <div id="m1-NewUser-text7" class="m1-text m1-font-3 m1-shadow-3">שם משפחה</div>
+        <input id="m1-NewUser-LastName" class="m1-textfield m1-textfield-border m1-font-12" value=""
+          type="text" name="LastName"/>
+        <div id="m1-NewUser-text8" class="m1-text m1-font-3 m1-shadow-3">שם תצוגה</div>
+        <input id="m1-NewUser-DisplayName" class="m1-textfield m1-textfield-border m1-font-12" value
+          ="" type="text" name="DisplayName"/>
+        <div id="m1-NewUser-RecieveUpdates" class="m1-checkbox m1-font-3">
+          <input type="checkbox" name="RecieveUpdates"/>
+        </div>
+        <div id="m1-NewUser-text5" class="m1-text m1-font-28">מאשר/ת קבלת עדכונים</div>
+      </div>
+      <!-- ***** Login *****  -->
+      <div id="m1-Login" class="m1-root m1-background-1">
+        <div id="m1-Login-text1" class="m1-text m1-font-29">שם משתמש</div>
+        <input id="m1-Login-txtUserName" class="m1-textfield m1-textfield-border m1-font-12" value=
+          "" type="text" name="txtUserName"/>
+        <div id="m1-Login-text2" class="m1-text m1-font-29">סיסמה</div>
+        <input id="m1-Login-txtPassword" class="m1-textfield m1-textfield-border m1-font-12" value=
+          "" type="password" name="txtPassword"/>
+        <div id="m1-Login-btnLogin" 
+          class="m1-clickable m1-button m1-font-32 m1-background-13 m1-background-14 m1-active-color-2"
+          name="btnLogin">כניסה</div>
+        <div id="m1-Login-checkBoxRememberMe" class="m1-checkbox m1-font-3">
+          <input type="checkbox" checked="true" name="checkBoxRememberMe"/>
+        </div>
+        <div id="m1-Login-text3" class="m1-text m1-font-29">זכור אותי</div>
+        <div id="m1-Login-custom2" 
+          class="m1-clickable m1-button m1-font-32 m1-background-13 m1-background-14 m1-active-color-2"
+          name="custom2" data-action-click-id="action39">משתמש חדש</div>
+        <div id="m1-Login-text4" class="m1-text m1-shadow-3 m1-font-33">Text</div>
+      </div>
+    </div>
+  </body>
+</html>

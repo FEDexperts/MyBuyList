@@ -1,0 +1,494 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ProperDevMasterPage.master.cs"
+    Inherits="ProperDevMasterPage" %>
+
+<%@ Register Assembly="obout_Flyout2_NET" Namespace="OboutInc.Flyout2" TagPrefix="cc1" %>
+<%@ Register Assembly="ProperControls" TagPrefix="pc" Namespace="ProperControls.General" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%@ Register Src="UserControls/ucGA.ascx" TagName="ucGA" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>MyBuyList.com</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 60px;
+        }
+        .style2
+        {
+        }
+        .style3
+        {
+            width: 28px;
+        }
+        .style4
+        {
+            width: 216px;
+        }
+        .style5
+        {
+            width: 50px;
+        }
+    </style>
+</head>
+<body dir="rtl" style="vertical-align: middle; position: absolute; top: 0px; margin-top: 0px;
+    width: 98%">
+    <form id="form1" runat="server" style="vertical-align: middle; top: 0px">
+
+    <script type="text/javascript">
+        // http://muath-ismail.blogspot.com/2008/07/sysinvalidoperationexception.html
+
+        // checks the PageRequestManager if there is already a postback being processed
+        function initializeRequest(sender, args) {
+            if (prm.get_isInAsyncPostBack()) {
+                args.set_cancel(true);
+            }
+        }
+
+        var prm = Sys.WebForms.PageRequestManager.getInstance();
+        prm.add_initializeRequest(initializeRequest);
+        //prm.add_endRequest(endRequest);
+    </script>
+
+    <%-- <script type="text/javascript" src="Scripts/MenuMealsDnD.js" />--%>
+    <%--<ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnablePartialRendering="true"
+        EnablePageMethods="true" EnableScriptGlobalization="true" EnableScriptLocalization="true">
+        <Scripts>
+            <asp:ScriptReference Path="~/Scripts/jquery-1.2.5.min.js" />
+            <asp:ScriptReference Path="~/scripts/swfobject.js" />
+        </Scripts>
+    </ajaxToolkit:ToolkitScriptManager>--%>
+    <div style="padding: 0px; vertical-align: top; margin: 0px; top: 0px;">
+        <table style="width: 100%; height: 100%;" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center" style="padding-right: 0px;">
+                    <table style="direction: rtl; top: 0px; margin: 0px; vertical-align: top; width: 920px"
+                        border="0" cellpadding="0px" cellspacing="0px">
+                        <tr>
+                            <td style="width: 756px; height: 81px; padding-top: 2px;" class="TopBanner" colspan="1"
+                                align="center" valign="top">
+                                <div id="flashBanner">
+                                </div>
+                            </td>
+                            <td style="width: 149px; height: 109px; padding-bottom: 3px; padding-top: 13px" rowspan="2">
+                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">
+                                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/New/Logo.gif" />
+                                </asp:HyperLink>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 850px; margin-bottom: 0px; padding-bottom: 0px;" align="right">
+                                <table cellpadding="0" cellspacing="0" border="0" style="width: 100%">
+                                    <tr>
+                                        <td align="right" valign="middle" style="width: 290px">
+                                            <table cellpadding="0" cellspacing="0" border="0" style="background-image: url('http://www.mybuylist.com/Images/New/BottomMenuBar.gif');
+                                                background-repeat: no-repeat;" width="300px;">
+                                                <tr style="height: 25px">
+                                                    <td align="right" style="padding-right: 5px; vertical-align: middle">
+                                                        <asp:LinkButton ID="LinkButton3" runat="server" Font-Bold="true" Font-Underline="false"
+                                                            ForeColor="Black" Text='דף הבית' Visible="true" Font-Size="11px" PostBackUrl="~/Default.aspx"></asp:LinkButton>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    </td>
+                                                    <td align="right" style="padding-right: 5px; vertical-align: middle">
+                                                        <asp:LinkButton ID="LinkButton4" runat="server" Font-Bold="true" Font-Underline="false"
+                                                            ForeColor="Black" Text='אודות' Visible="true" Font-Size="11px" PostBackUrl="~/Terms.aspx"></asp:LinkButton>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    </td>
+                                                    <td style="vertical-align: middle">
+                                                        <asp:LinkButton ID="LinkButton5" runat="server" Font-Bold="true" Font-Underline="false"
+                                                            ForeColor="Black" Text='שימוש באתר' Visible="true" Font-Size="11px" PostBackUrl="~/HowToUse.aspx"></asp:LinkButton>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    </td>
+                                                    <td style="vertical-align: middle">
+                                                        <asp:LinkButton ID="LinkButton2" runat="server" Font-Bold="true" Font-Underline="false"
+                                                            ForeColor="Black" Text='טיפים' Visible="true" Font-Size="11px" PostBackUrl="~/Tips.aspx"></asp:LinkButton>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    </td>
+                                                    <td style="vertical-align: middle">
+                                                        <asp:LinkButton ID="LinkButton1" runat="server" Font-Bold="true" Font-Underline="false"
+                                                            ForeColor="Black" Text='יצירת קשר' Visible="true" Font-Size="11px" PostBackUrl="~/ContactUs.aspx"></asp:LinkButton>&nbsp;
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td align="center" dir="ltr">
+                                            <table cellpadding="0" cellspacing="0" border="0">
+                                                <tr>
+                                                    <td style="width: 50px;">
+                                                        <asp:Image ID="ImageArrow" runat="server" ImageUrl="~/Images/New/Arrow.gif" Visible="false" />
+                                                    </td>
+                                                    <td id="basket1" runat="server" style="width: 40px;" align="center">
+                                                        <asp:ImageButton ID="basketImg1" runat="server" ImageUrl="~/Images/New/Basket1.gif"
+                                                            OnClick="basketImg1_Click" Visible="false"></asp:ImageButton>
+                                                        <cc1:Flyout ID="Flyout1" runat="server" AttachTo="basket1" Position="TOP_CENTER">
+                                                            <table style="text-align: center; vertical-align: middle;">
+                                                                <tr>
+                                                                    <td style="width: 67px; height: 38px; margin: 0px; background-repeat: no-repeat;
+                                                                        padding-bottom: 2px; background-image: url('http://www.mybuylist.com/Images/New/BasketTooltipContainer.gif');"
+                                                                        valign="top">
+                                                                        <asp:Label ID="Label1" runat="server" Text="בחירת צורת<br> ארגון" Font-Size="10px"
+                                                                            Width="66px" Height="25px"></asp:Label>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </cc1:Flyout>
+                                                    </td>
+                                                    <td id="basket2" runat="server" style="width: 40px;" align="center">
+                                                        <asp:ImageButton ID="basketImg2" runat="server" ImageUrl="~/Images/New/Basket2.gif"
+                                                            OnClick="basketImg2_Click" Visible="false" />
+                                                        <cc1:Flyout ID="Flyout2" runat="server" AttachTo="basket2" Position="TOP_CENTER">
+                                                            <table style="text-align: center; vertical-align: middle">
+                                                                <tr>
+                                                                    <td style="width: 69px; height: 38px; margin: 0px; padding: 0px; background-repeat: no-repeat;
+                                                                        background-image: url('http://www.mybuylist.com/Images/New/BasketTooltipContainer.gif');"
+                                                                        valign="top">
+                                                                        <asp:Label ID="Label2" runat="server" Text="בחירת מתכון" Font-Size="10px"></asp:Label>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </cc1:Flyout>
+                                                    </td>
+                                                    <td id="basket3" runat="server" style="width: 40px;" align="center">
+                                                        <asp:ImageButton ID="basketImg3" runat="server" ImageUrl="~/Images/New/Basket3.gif"
+                                                            OnClick="basketImg3_Click" Visible="false" />
+                                                        <cc1:Flyout ID="Flyout3" runat="server" AttachTo="basket3" Position="TOP_CENTER">
+                                                            <table style="text-align: center; vertical-align: middle">
+                                                                <tr>
+                                                                    <td style="width: 69px; height: 38px; margin: 0px; padding: 0px; background-repeat: no-repeat;
+                                                                        background-image: url('http://www.mybuylist.com/Images/New/BasketTooltipContainer.gif');"
+                                                                        valign="top">
+                                                                        <asp:Label ID="Label3" runat="server" Text="ארגון המתכונים" Font-Size="10px"></asp:Label>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </cc1:Flyout>
+                                                    </td>
+                                                    <td id="basket4" runat="server" style="width: 40px;" align="center">
+                                                        <asp:ImageButton ID="basketImg4" runat="server" ImageUrl="~/Images/New/Basket4.gif"
+                                                            OnClick="basketImg4_Click" Visible="false" />
+                                                        <cc1:Flyout ID="Flyout4" runat="server" AttachTo="basket4" Position="TOP_CENTER">
+                                                            <table style="text-align: center; vertical-align: middle">
+                                                                <tr>
+                                                                    <td style="width: 69px; height: 38px; margin: 0px; padding: 0px; background-repeat: no-repeat;
+                                                                        background-image: url('http://www.mybuylist.com/Images/New/BasketTooltipContainer.gif');"
+                                                                        valign="top">
+                                                                        <asp:Label ID="Label4" runat="server" Text="ארגון רשימת הקניות" Font-Size="9px" Height="32px"></asp:Label>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </cc1:Flyout>
+                                                    </td>
+                                                    <td runat="server" align="center" class="style4">
+                                                        <asp:Label ID="lblChoose" runat="server" Text="מדריך מקוצר לאתר" Font-Bold="true"
+                                                            Visible="false"></asp:Label>
+                                                    </td>
+                                                    <td dir="ltr" style="padding-left: 10px; width: 200px">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table width="100%">
+                                    <tr>
+                                        <td valign="top" rowspan="1">
+                                            <table cellpadding="0" cellspacing="0" border="0">
+                                                <tr>
+                                                    <td class="UserLoginBox" valign="top">
+                                                        <table style="width: 100%">
+                                                            <tr>
+                                                                <td style="width: 100%">
+                                                                    <asp:LoginView ID="LoginView1" runat="server">
+                                                                        <AnonymousTemplate>
+                                                                            <asp:Panel ID="pnlLoginbox" runat="server" Font-Size="11px" Style="margin-right: 0px">
+                                                                                <asp:Login ID="MasterLogin" runat="server" Height="131px" LoginButtonText="כניסה"
+                                                                                    PasswordLabelText="סיסמה:" RememberMeText="זכור אותי" TitleText="" PasswordRecoveryText="שכחת סיסמא?"
+                                                                                    PasswordRecoveryUrl="PasswordRecovery.aspx" CreateUserText="הרשמה" CreateUserUrl="~Users/User.aspx"
+                                                                                    UserNameRequiredErrorMessage="*" PasswordRequiredErrorMessage="*" FailureText="שגיאה"
+                                                                                    UserNameLabelText="שם:" Width="131px" OnLoggedIn="Login1_LoggedIn">
+                                                                                    <LayoutTemplate>
+                                                                                        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;
+                                                                                            height: 131px; width: 100%">
+                                                                                            <tr>
+                                                                                                <td align="center" class="UserLoginBoxTitle">
+                                                                                                    כניסת חברים
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="UserLoginBoxBody">
+                                                                                                    <table border="0" cellpadding="0" cellspacing="0">
+                                                                                                        <tr style="padding-bottom: 1px;">
+                                                                                                            <td align="right" class="style3" style="padding-left: 3px; padding-bottom: 1px;">
+                                                                                                                <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">שם:</asp:Label>
+                                                                                                            </td>
+                                                                                                            <td align="right" style="padding-bottom: 1px;">
+                                                                                                                <asp:TextBox ID="UserName" runat="server" Width="65px" Style="font-size: 10px; padding: 0px"></asp:TextBox>
+                                                                                                                <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName"
+                                                                                                                    ErrorMessage="יש להכניס שם משתמש" ToolTip="יש להכניס שם משתמש" ValidationGroup="MasterLogin">*</asp:RequiredFieldValidator>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                            <td align="right" class="style3" style="padding-left: 3px; padding-bottom: 1px;">
+                                                                                                                <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">סיסמא:</asp:Label>
+                                                                                                            </td>
+                                                                                                            <td align="right" style="padding-bottom: 1px;">
+                                                                                                                <asp:TextBox ID="Password" runat="server" Width="65px" Style="font-size: 10px; padding: 0px"
+                                                                                                                    TextMode="Password"></asp:TextBox>
+                                                                                                                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
+                                                                                                                    ErrorMessage="יש להכניס סיסמא" ToolTip="יש להכניס סיסמא" ValidationGroup="MasterLogin">*</asp:RequiredFieldValidator>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                        <tr style="padding-bottom: 1px;">
+                                                                                                            <td align="right" colspan="2" class="style2" style="padding-bottom: 1px;">
+                                                                                                                <asp:CheckBox ID="RememberMe" runat="server" Text="&nbsp;זכור אותי" />
+                                                                                                                <br />
+                                                                                                                <asp:HyperLink ID="PasswordRecoveryLink" runat="server" NavigateUrl="PasswordRecovery.aspx">שכחת סיסמא?</asp:HyperLink>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                        <tr style="padding-bottom: 1px;">
+                                                                                                            <td align="right" colspan="2" style="color: Red; padding-bottom: 1px;">
+                                                                                                                <asp:Button ID="LoginButton" runat="server" CommandName="Login" CssClass="btn" Text="כניסה"
+                                                                                                                    ValidationGroup="MasterLogin" Width="66px" />
+                                                                                                                &nbsp;&nbsp;<asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+                                                                                                                <asp:HyperLink ID="CreateUserLink" runat="server" NavigateUrl="~/User.aspx">הרשמה</asp:HyperLink>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </LayoutTemplate>
+                                                                                </asp:Login>
+                                                                            </asp:Panel>
+                                                                        </AnonymousTemplate>
+                                                                        <LoggedInTemplate>
+                                                                            <asp:Panel ID="pnlConnected" runat="server" Font-Size="11px" Style="margin-right: 0px">
+                                                                                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;
+                                                                                    height: 131px; width: 100%">
+                                                                                    <tr>
+                                                                                        <td align="center" class="UserLoginBoxTitle">
+                                                                                            <asp:Label ID="lblWelcome" runat="server" Text=""></asp:Label>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td class="UserLoginBoxBody">
+                                                                                            <table style="text-align: right; direction: rtl;">
+                                                                                                <tr>
+                                                                                                    <td>
+                                                                                                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/User.aspx">עריכת פרופיל משתמש</asp:HyperLink>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td>
+                                                                                                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Users/PersonalArea.aspx">הרשימות שלי</asp:HyperLink><br />
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr id="rowAdmin" runat="server" visible="false">
+                                                                                                    <td>
+                                                                                                        <asp:LinkButton ID="btnAdmin" runat="server" Font-Bold="true" Text='<%$ Resources:MyGlobalResources, SystemManagement %>'
+                                                                                                            PostBackUrl="~/Admin/Admin.aspx"></asp:LinkButton>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td>
+                                                                                                        <asp:LoginStatus ID="MasterLoginStatus" runat="server" LoginText="כניסה למערכת" LogoutText="יציאה מהמערכת"
+                                                                                                            OnLoggedOut="MasterLoginStatus_LoggedOut" />
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </table>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </asp:Panel>
+                                                                        </LoggedInTemplate>
+                                                                    </asp:LoginView>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 20px;">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="UserLoginBox">
+                                                        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;
+                                                            height: 131px; width: 100%">
+                                                            <tr>
+                                                                <td align="center" class="UserLoginBoxTitle">
+                                                                    חדשות האתר
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="UserLoginBoxBody" style="padding-left: 4px; padding-right: 8px; padding-bottom: 4px;">
+                                                                    <marquee scrolldelay="260" direction="up" height="100px" onmouseover="this.stop();"
+                                                                        onmouseout="this.start();">
+                                                                        על מנת לראות את המתכונים יש לבחור תחילה בצורת ארגון (אחת הפיתקיות)<br /><br />
+                                                                        <a href="http://www.healthyfamily.co.il/">משפחה בריאה-תזונה טבעית לילדים ולהורים בהנהלת ד"ר איילת רוזנפלד</a><br /><br />
+                                                                    </marquee>
+                                                                        </marquee>                                                                    
+                                                                    
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="SideBanner">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td colspan="2" align="left">
+                                            <table cellpadding="0" cellspacing="0" border="0" style="vertical-align: top; text-align: right">
+                                                <tr style="vertical-align: top;">
+                                                    <td class="style1" style="width: 512px">
+                                                        <table style="padding: 0px; margin: 0px; width: 512px;" cellpadding="0px" cellspacing="0px">
+                                                            <tr>
+                                                                <td class="tdRightContentTop">
+                                                                    &nbsp;
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="tdRightContent" valign="top">
+                                                                    <div style="padding-right: 20px; padding-left: 13px; vertical-align: top;">
+                                                                        <asp:ContentPlaceHolder ID="RightContentPlaceHolder" runat="server">
+                                                                        </asp:ContentPlaceHolder>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="tdRightContentBottom">
+                                                                    &nbsp;
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <div style="position: relative">
+                                                            <div id="leftTopNote" runat="server" class="leftTopNote" style="right: 80px; top: -10px;
+                                                                z-index: 1000; position: absolute">
+                                                            </div>
+                                                        </div>
+                                                        <table style="width: 242px;" cellpadding="0px" cellspacing="0px">
+                                                            <tr>
+                                                                <td id="tdLeftContentTop" runat="server" class="tdLeftContentTop">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td id="tdLeftContent" runat="server" class="tdLeftContent">
+                                                                    <table>
+                                                                        <tr>
+                                                                            <td style="height: 70px;" colspan="2">
+                                                                                &nbsp;
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="width: 50;">
+                                                                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            </td>
+                                                                            <td style="width: 80px;">
+                                                                                <asp:ContentPlaceHolder ID="LeftContentPlaceHolder" runat="server">
+                                                                                </asp:ContentPlaceHolder>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td id="tdLeftContentBootom" runat="server" class="tdLeftContentBottom">
+                                                                    &nbsp;
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" style="padding-top: 20px; padding-bottom: 20px;" align="center">
+
+                                                        <script type="text/javascript"><!--
+                                                            google_ad_client = "pub-6588130679360244";
+                                                            /* דף הבית 728x90 בחלק התחתון של הדף */
+                                                            google_ad_slot = "6143986463";
+                                                            google_ad_width = 728;
+                                                            google_ad_height = 90;
+                                            //-->
+                                                        </script>
+
+                                                        <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                                                        </script>
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="text-align: center;">
+        <span style="font-size: 11px; color: Gray">כל הזכויות באתר שמורות לחברת MyBuyList.com מפעילת האתר. 
+אין להעתיק או לעשות שימוש בתכנים באתר, פרט לשימושים המותרים המפורטים בתנאי השימוש באתר ללא קבלת אישור מפורש ובכתב ממפעילת האתר.<br />
+            <asp:HyperLink ID="HyperLink4" runat="server" Target="properdev" NavigateUrl="http://www.properdev.com">בית תוכנה</asp:HyperLink>&nbsp;
+            <asp:HyperLink runat="server" Target="properdev" NavigateUrl="http://www.properdev.com">
+                <asp:Image runat="server" style="vertical-align: middle" ImageUrl="~/Images/ProperDev.gif" AlternateText="פרופר דבלופמנט" />
+            </asp:HyperLink>&nbsp;
+            <asp:HyperLink ID="HyperLink5" runat="server" Target="properdev" NavigateUrl="http://www.properdev.com">בניית אתרים</asp:HyperLink>
+        </span>
+    </div>
+    </form>
+
+    <script language="javascript" type="text/javascript">
+
+        var dragElementPattern = ".+_pnlItem$";
+        var divElements = document.getElementsByTagName("div");
+        var currentPage = "<%= this.Page.AppRelativeVirtualPath %>";
+
+        if (currentPage == '~/MenuMeals.aspx') {
+            for (i = 0; i < divElements.length; i++) {
+
+                if (IsMatch(divElements[i].id, dragElementPattern)) {
+                    MakeElementDraggable(divElements[i]);
+                }
+            }
+        }
+
+
+    </script>
+
+    <script type="text/javascript">
+        // <![CDATA[
+
+        //                                <object type="application/x-shockwave-flash" data="/banners/1.swf" width="523" height="65">
+        //                                    <param name="movie" value='/banners/1.swf' />
+        //                                </object>
+
+        var flashUrl = '<%= this.CurrentBannerUrl %>';
+
+        if (flashUrl != '') {
+            var so = new SWFObject(flashUrl, "sotester", "523", "65", "9");
+            so.addParam("wmode", "transparent");
+            so.write("flashBanner");
+        }
+
+        // ]]>
+    </script>
+
+    <uc1:ucGA ID="ucGA1" runat="server" />
+</body>
+</html>

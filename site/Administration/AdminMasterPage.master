@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs"
+    Inherits="Administration_AdminMasterPage" %>
+
+<%@ Register Src="Controls/MemoryUsage.ascx" TagName="MemoryUsage" TagPrefix="uc1" %>
+<%@ Register Assembly="ProperControls" Namespace="ProperControls.BasicControls.Containers"
+    TagPrefix="proper" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <%--<ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnablePartialRendering="true"
+        EnablePageMethods="true" EnableScriptGlobalization="true" EnableScriptLocalization="true">
+        <Scripts>
+            <asp:ScriptReference Path="~/Scripts/jquery-1.2.5.min.js" />
+        </Scripts>
+    </ajaxToolkit:ToolkitScriptManager>--%>
+    <proper:ProperContainer runat="server" MoreText="Show memory" HideText="Hide Memory">
+        <hidden>
+    <uc1:MemoryUsage ID="MemoryUsage1" runat="server" />
+    </hidden>
+    </proper:ProperContainer>
+    <br />
+    current user:
+    <asp:LoginName ID="LoginName1" runat="server" />
+    <asp:LoginStatus ID="LoginStatus1" runat="server" />
+    <br />
+    <asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder1">
+    </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

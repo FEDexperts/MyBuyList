@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>הוספה</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>נוצר</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>מחיקה</value>
+  </data>
+  <data name="DepartmentName" xml:space="preserve">
+    <value>שם מחלקה</value>
+  </data>
+  <data name="FoodProductsDeparments" xml:space="preserve">
+    <value>מחלקות מוצרי מזון</value>
+  </data>
+  <data name="MeasurementUnits" xml:space="preserve">
+    <value>יחידות מדידה</value>
+  </data>
+  <data name="MyMenusList" xml:space="preserve">
+    <value>רשימת תפריטים שלי</value>
+  </data>
+  <data name="MenuTypes" xml:space="preserve">
+    <value>סוגי תפריטים</value>
+  </data>
+  <data name="Modified" xml:space="preserve">
+    <value>עודכן</value>
+  </data>
+  <data name="MyRecipesList" xml:space="preserve">
+    <value>רשימת מתכונים שלי</value>
+  </data>
+  <data name="SiteTitle" xml:space="preserve">
+    <value>ארגון רשימת הקניות שלך</value>
+  </data>
+  <data name="SystemManagement" xml:space="preserve">
+    <value>ניהול מערכת</value>
+  </data>
+  <data name="UnitType" xml:space="preserve">
+    <value>סוג מדידה</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>עידכון</value>
+  </data>
+  <data name="MenuDescription" xml:space="preserve">
+    <value>תאור תפריט</value>
+  </data>
+  <data name="ChoiceMenuRecipes" xml:space="preserve">
+    <value>בחירת מתכונים לתפריט</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>ביטול</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>הבא</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>אישור</value>
+  </data>
+  <data name="PlanningMenu" xml:space="preserve">
+    <value>ארגון תפריט</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>יום שישי</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>יום שני</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>יום שבת</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>יום ראשון</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>יום חמישי</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>יום שלישי</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>יום רביעי</value>
+  </data>
+  <data name="DeleteMenu" xml:space="preserve">
+    <value>מחק תפריט</value>
+  </data>
+  <data name="ShowRecipes" xml:space="preserve">
+    <value>הצג מתכונים</value>
+  </data>
+  <data name="Ingredients" xml:space="preserve">
+    <value>החומרים הדרושים:</value>
+  </data>
+  <data name="PreparationMethod" xml:space="preserve">
+    <value>אופן הכנה:</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>שמור</value>
+  </data>
+  <data name="RecipeName" xml:space="preserve">
+    <value>שם המתכון</value>
+  </data>
+  <data name="ServingsNum" xml:space="preserve">
+    <value>מס' סועדים</value>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>הערות</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>מקור</value>
+  </data>
+  <data name="PublicRecipe" xml:space="preserve">
+    <value>שיתוף המתכון באתר</value>
+  </data>
+  <data name="NewRecipe" xml:space="preserve">
+    <value>מתכון חדש</value>
+  </data>
+  <data name="ShowInFavorites" xml:space="preserve">
+    <value>הצג במתכונים מועדפים</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>קטגוריות</value>
+  </data>
+  <data name="RecipeCategory" xml:space="preserve">
+    <value>קטגוריית מתכונים</value>
+  </data>
+  <data name="ParentCategory" xml:space="preserve">
+    <value>קטגוריית אם</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>נקה הכל</value>
+  </data>
+  <data name="NextWeek" xml:space="preserve">
+    <value>שבוע הבא</value>
+  </data>
+  <data name="PrevWeek" xml:space="preserve">
+    <value>שבוע קודם</value>
+  </data>
+  <data name="WeekNo" xml:space="preserve">
+    <value>שבוע מס'</value>
+  </data>
+  <data name="PrintRecipe" xml:space="preserve">
+    <value>הדפס מתכון</value>
+  </data>
+  <data name="SendToFriend" xml:space="preserve">
+    <value>שלח לחבר</value>
+  </data>
+  <data name="RecipeCategorization" xml:space="preserve">
+    <value>סיווג מתכון</value>
+  </data>
+  <data name="SearchRecipes" xml:space="preserve">
+    <value>חיפוש מתכונים</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>שם</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>כמות</value>
+  </data>
+  <data name="And" xml:space="preserve">
+    <value>ו-</value>
+  </data>
+  <data name="Remark" xml:space="preserve">
+    <value>הערה</value>
+  </data>
+  <data name="MeasurementUnit" xml:space="preserve">
+    <value>יח' מידה</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>הסר</value>
+  </data>
+  <data name="MyList" xml:space="preserve">
+    <value>הרשימה שלי</value>
+  </data>
+  <data name="ManyWeeksMenu" xml:space="preserve">
+    <value>תפריט רב שבועי</value>
+  </data>
+  <data name="MealMenu" xml:space="preserve">
+    <value>תפריט לארוחה</value>
+  </data>
+  <data name="WeeklyMenu" xml:space="preserve">
+    <value>תפריט שבועי</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>סיום</value>
+  </data>
+  <data name="ShoppingList" xml:space="preserve">
+    <value>רשימת קניות</value>
+  </data>
+  <data name="AdditionalItems" xml:space="preserve">
+    <value>מצרכים נוספים</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>הדפסה</value>
+  </data>
+  <data name="SendMail" xml:space="preserve">
+    <value>שליחה למייל</value>
+  </data>
+  <data name="MenuRecipes" xml:space="preserve">
+    <value>מתכונים לתפריט</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>קודם</value>
+  </data>
+  <data name="CloseWindow" xml:space="preserve">
+    <value>סגור חלון</value>
+  </data>
+  <data name="UpdateRecipe" xml:space="preserve">
+    <value>עידכון מתכון</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>בחר</value>
+  </data>
+  <data name="ShowInPersonalArea" xml:space="preserve">
+    <value>הצג באזור הפרטי שלי</value>
+  </data>
+  <data name="MyFavoritesRecipes" xml:space="preserve">
+    <value>מתכונים מועדפים שלי</value>
+  </data>
+  <data name="MyPersonalArea" xml:space="preserve">
+    <value>אזור הפרטי שלי</value>
+  </data>
+  <data name="AddRecipeToFavorites" xml:space="preserve">
+    <value>הוסף מתכון למועדפים שלי</value>
+  </data>
+  <data name="CopyRecipe" xml:space="preserve">
+    <value>העתק מתכון</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>העתק</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>חזור</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>עריכה</value>
+  </data>
+  <data name="RemoveRecipeFromFavorites" xml:space="preserve">
+    <value>הסר מתכון ממועדפים שלי</value>
+  </data>
+  <data name="MenuDetails" xml:space="preserve">
+    <value>פרטי תפריט</value>
+  </data>
+  <data name="RecipeDetails" xml:space="preserve">
+    <value>פרטי מתכון</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>תיאור</value>
+  </data>
+  <data name="MenuName" xml:space="preserve">
+    <value>שם תפריט</value>
+  </data>
+  <data name="Cancel1" xml:space="preserve">
+    <value>בטל</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>שנה</value>
+  </data>
+  <data name="FreeText" xml:space="preserve">
+    <value>טקסט חופשי</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>חפש</value>
+  </data>
+  <data name="FoundNoRecipes" xml:space="preserve">
+    <value>נמצאו {0} מתכונים</value>
+  </data>
+  <data name="SearchByCategories" xml:space="preserve">
+    <value> לפי קטגוריות </value>
+  </data>
+  <data name="SearchComplex" xml:space="preserve">
+    <value> מורכב </value>
+  </data>
+  <data name="SearchSimple" xml:space="preserve">
+    <value> רגיל </value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>הכל</value>
+  </data>
+  <data name="SelectCategories" xml:space="preserve">
+    <value>בחר קטגוריות</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>נקה</value>
+  </data>
+  <data name="Ingredient" xml:space="preserve">
+    <value>מצרך</value>
+  </data>
+  <data name="MeasurementUnitsConvert" xml:space="preserve">
+    <value>המרה בין  יחידות מדידה</value>
+  </data>
+  <data name="MeasurementUnitsConverts" xml:space="preserve">
+    <value>המרות בין יחידות מידה</value>
+  </data>
+  <data name="FoodName" xml:space="preserve">
+    <value>שם מצרך</value>
+  </data>
+  <data name="Foods" xml:space="preserve">
+    <value>מצרכים</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>אחר</value>
+  </data>
+  <data name="Temporary" xml:space="preserve">
+    <value>חדשים</value>
+  </data>
+  <data name="FoodCategory" xml:space="preserve">
+    <value>קבוצת מצרכים</value>
+  </data>
+  <data name="CategoryEdition" xml:space="preserve">
+    <value>עריכת קטגוריה</value>
+  </data>
+  <data name="DepartmentEdition" xml:space="preserve">
+    <value>עריכת מחלקה</value>
+  </data>
+  <data name="FoodsEdition" xml:space="preserve">
+    <value>עריכת מצרכים</value>
+  </data>
+  <data name="MeasurementUnitEdition" xml:space="preserve">
+    <value>עריכת יח' מדידה</value>
+  </data>
+  <data name="SearchRecipeComment" xml:space="preserve">
+    <value>(יש לבחור מתכון ע"י לחיצה על החץ הורוד)</value>
+  </data>
+  <data name="NoDataForNutritionalValues" xml:space="preserve">
+    <value>לא ניתן להציג מידע על ערכים תזונתיים של המתכון.
+המידע יושלם בעוד מספר ימים.</value>
+  </data>
+  <data name="NutritionalValuesPerServing" xml:space="preserve">
+    <value>ערכים תזונתיים למנה</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>כלים:</value>
+  </data>
+  <data name="QuickMenu" xml:space="preserve">
+    <value>רשימת קניות מהירה</value>
+  </data>
+  <data name="MyPersonalAreaPageTitle" xml:space="preserve">
+    <value>MyBuyList - האזור הפרטי שלי</value>
+  </data>
+  <data name="NotSaved" xml:space="preserve">
+    <value>השינויים לא נשמרו. האם לוותר על השינויים?</value>
+  </data>
+  <data name="MenuCategories" xml:space="preserve">
+    <value>קטגוריות לתפריט</value>
+  </data>
+  <data name="MenuCategory" xml:space="preserve">
+    <value>קטגוריית תפריטים</value>
+  </data>
+  <data name="EditWhatsNew" xml:space="preserve">
+    <value>עריכת "מה חדש"</value>
+  </data>
+  <data name="EditArticles" xml:space="preserve">
+    <value>עריכת מאמרים</value>
+  </data>
+  <data name="SelectUserMenus" xml:space="preserve">
+    <value>בחר/י מתפריטים קיימים</value>
+  </data>
+  <data name="IngridiantName" xml:space="preserve">
+    <value>שם המצרך</value>
+  </data>
+  <data name="IngridiantProcess" xml:space="preserve">
+    <value>אופן חיתוך, עיבוד וייעוד</value>
+  </data>
+</root>

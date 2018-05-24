@@ -1,0 +1,6 @@
+﻿# robots.txt for http://www.mybuylist.com/
+
+User-agent: *
+Disallow: /admin/
+Disallow: /administration/
+Disallow: /webservices/

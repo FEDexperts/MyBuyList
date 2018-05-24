@@ -1,0 +1,1 @@
+﻿window.mblRestHost = window.location.origin + '/MyBuyListRest/';

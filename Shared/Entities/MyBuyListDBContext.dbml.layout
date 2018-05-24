@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 19.75, 36.75" name="DataClasses1">
+  <DataContextMoniker Name="/MyBuyListDBContext" />
+  <nestedChildShapes>
+    <classShape Id="e7ec13b1-75b7-4a59-90c4-e2f48467bb36" absoluteBounds="3.75, 11.875, 2, 1.8186806093653054">
+      <DataClassMoniker Name="/MyBuyListDBContext/ShopDepartment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7f8fbe16-2356-4f40-ae19-848f8c312d10" absoluteBounds="3.7650000000000006, 12.335, 1.9700000000000002, 1.2586806093653042" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e549ebaa-285d-4872-a049-59aa9850db26" absoluteBounds="9, 26.625, 2, 1.2197222511967034">
+      <DataClassMoniker Name="/MyBuyListDBContext/UserFavoriteRecipe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6aa8dac-08f5-4593-b4e0-c0eb0f1d2573" absoluteBounds="9.015, 27.085, 1.9700000000000002, 0.65972225119670225" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b99735ea-ac71-4edf-9d1c-d170f374ce00" absoluteBounds="9, 24.375, 2, 1.2197222511967034">
+      <DataClassMoniker Name="/MyBuyListDBContext/MenuRecipe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a739480-d4e1-4b6c-b0cf-06696c4c71ed" absoluteBounds="9.015, 24.835, 1.9700000000000002, 0.65972225119670225" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3fe2d66d-65f2-49be-8774-36ad34f1ad2c" absoluteBounds="3.5, 18.125, 2, 1.4193750372529053">
+      <DataClassMoniker Name="/MyBuyListDBContext/MenuType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="07222343-a036-48cf-b98b-50f48ec9555a" absoluteBounds="3.5150000000000006, 18.585, 1.9700000000000002, 0.859375037252903" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5239ccd1-8259-4918-8df0-1330ad732b30" absoluteBounds="12, 30.75, 2, 1.4193750372529053">
+      <DataClassMoniker Name="/MyBuyListDBContext/MealRecipe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="99fbf34d-0c9a-411e-aeeb-600b385b15e3" absoluteBounds="12.015, 31.21, 1.9700000000000002, 0.859375037252903" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="da1422dd-d21f-49b8-be8b-a40849e67092" absoluteBounds="9.25, 34.125, 2, 1.4193750372529053">
+      <DataClassMoniker Name="/MyBuyListDBContext/MealType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7ab72c0-30dd-4ebf-b5cc-d2f0cfefd924" absoluteBounds="9.265, 34.585, 1.9700000000000002, 0.859375037252903" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="11ed20db-2354-48d3-bab2-a095339861ce" absoluteBounds="9.25, 9, 2, 1.4193750372529035">
+      <DataClassMoniker Name="/MyBuyListDBContext/CourseType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd6f1502-4b8b-4e66-83b3-8920e6eac397" absoluteBounds="9.265, 9.46, 1.9700000000000002, 0.859375037252903" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2265b916-c5e2-4154-b63c-c88cc1a4a5bf" absoluteBounds="6.25, 25.375, 2, 2.0183333954215072">
+      <DataClassMoniker Name="/MyBuyListDBContext/Category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd4de121-a50a-4f5b-88cb-71e965f77b30" absoluteBounds="6.2650000000000006, 25.835, 1.9700000000000002, 1.458333395421505" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.95923076923077 : 27.3933333954215); (6.95923076923077 : 27.7267480841279); (7.55461538461539 : 27.7267480841279); (7.55461538461539 : 27.3933333954215)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyBuyListDBContext/Category/Category_Category" />
+      <nodes>
+        <classShapeMoniker Id="2265b916-c5e2-4154-b63c-c88cc1a4a5bf" />
+        <classShapeMoniker Id="2265b916-c5e2-4154-b63c-c88cc1a4a5bf" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e91dba63-cd26-4d06-a481-92353ad6904a" absoluteBounds="9, 31.875, 2, 1.219722251196707">
+      <DataClassMoniker Name="/MyBuyListDBContext/RecipeCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1fdbbc94-38b2-4af9-8916-7861cf26e968" absoluteBounds="9.015, 32.335, 1.9700000000000002, 0.65972225119670225" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 27.4752086225894); (8.625 : 27.8502086225894); (8.625 : 32.5043245529632); (9 : 32.5043245529632)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Category/Category_RecipeCategory" />
+      <nodes>
+        <classShapeMoniker Id="2265b916-c5e2-4154-b63c-c88cc1a4a5bf" />
+        <classShapeMoniker Id="e91dba63-cd26-4d06-a481-92353ad6904a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b41b7241-ef76-494f-a502-06d4a5595e6f" absoluteBounds="6.75, 0.75, 2, 2.617291753590107">
+      <DataClassMoniker Name="/MyBuyListDBContext/RecipeIngredientsView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9af48fd1-7084-4a0a-a4c4-3bcc1000b8cc" absoluteBounds="6.7650000005960464, 1.2100000008940697, 1.9700000000000002, 2.057291753590107" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4fea8042-ddf1-4188-a73d-1f5d0c2165d2" absoluteBounds="6.5, 11.625, 2, 2.2179861814777055">
+      <DataClassMoniker Name="/MyBuyListDBContext/FoodCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="04477cd0-2cc6-4d99-8366-28b8e707da15" absoluteBounds="6.5150000000000006, 12.085, 1.9700000000000002, 1.6579861814777055" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.05692307692308 : 13.9375228286783); (7.05692307692308 : 14.1875228286783); (7.5 : 14.1875228286783); (7.5 : 13.9375228286783)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/FoodCategory/FoodCategory_FoodCategory" />
+      <nodes>
+        <classShapeMoniker Id="4fea8042-ddf1-4188-a73d-1f5d0c2165d2" />
+        <classShapeMoniker Id="4fea8042-ddf1-4188-a73d-1f5d0c2165d2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 12.8204866697888); (6.5 : 12.8204866697888)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyBuyListDBContext/ShopDepartment/ShopDepartment_FoodCategory" />
+      <nodes>
+        <classShapeMoniker Id="e7ec13b1-75b7-4a59-90c4-e2f48467bb36" />
+        <classShapeMoniker Id="4fea8042-ddf1-4188-a73d-1f5d0c2165d2" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="64afcc0b-2b54-466e-abbb-8c46dd84c5d1" absoluteBounds="9.25, 12.125, 2, 1.4193750372529035">
+      <DataClassMoniker Name="/MyBuyListDBContext/GeneralItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cb28b75a-b45d-426a-9569-7d35db27e9f6" absoluteBounds="9.265, 12.585, 1.9700000000000002, 0.859375037252903" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="62f1c03a-52de-414b-9229-0ba888558e58" absoluteBounds="12, 18, 2, 1.6190278233091071">
+      <DataClassMoniker Name="/MyBuyListDBContext/ShoppingListAdditionalItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="68cc3f8d-9d38-41a4-ba18-d967a76f6efd" absoluteBounds="12.015, 18.46, 1.9700000000000002, 1.0590278233091035" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.15625 : 13.5944238504767); (11.15625 : 19.0631738504767); (12 : 19.0631738504767)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/GeneralItem/GeneralItem_ShoppingListAdditionalItem" />
+      <nodes>
+        <classShapeMoniker Id="64afcc0b-2b54-466e-abbb-8c46dd84c5d1" />
+        <classShapeMoniker Id="62f1c03a-52de-414b-9229-0ba888558e58" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="be498939-eac1-493c-b9c0-1b6f8286606a" absoluteBounds="0.75, 21.125, 2, 1.2197222511967034">
+      <DataClassMoniker Name="/MyBuyListDBContext/UserType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bc8133b9-87ad-415c-9594-37e931bec13c" absoluteBounds="0.76500000000000012, 21.585, 1.9700000000000002, 0.65972225119670225" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2e042c79-91e9-48ef-aa55-5d4ca7bc97b0" absoluteBounds="9.5, 6.125, 2, 1.2197222511967016">
+      <DataClassMoniker Name="/MyBuyListDBContext/NutCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="34ef0edb-0df3-4caa-be35-c4335b6cc4df" absoluteBounds="9.515, 6.5850000000000009, 1.9700000000000002, 0.65972225119670225" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f092113b-f4b0-43a4-b8c8-0f4833577c17" absoluteBounds="12.25, 6, 2, 1.6190278233091036">
+      <DataClassMoniker Name="/MyBuyListDBContext/NutItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eefeb14b-ed2f-46c7-a5d9-28e7282ef9d8" absoluteBounds="12.265, 6.4600000000000009, 1.9700000000000002, 1.0590278233091035" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.5 : 6.75432455296318); (12.25 : 6.75432455296318)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/NutCategory/NutCategory_NutItem" />
+      <nodes>
+        <classShapeMoniker Id="2e042c79-91e9-48ef-aa55-5d4ca7bc97b0" />
+        <classShapeMoniker Id="f092113b-f4b0-43a4-b8c8-0f4833577c17" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e98454c1-abbe-4857-b19e-0b83c61ab711" absoluteBounds="0.75, 7.75, 2, 1.2197222511967034">
+      <DataClassMoniker Name="/MyBuyListDBContext/MBLSetting" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c0551bf0-85ea-4336-a4ab-20d320163f15" absoluteBounds="0.76500000059604645, 8.21000000089407, 1.9700000000000002, 0.65972225119670225" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4cf6b009-9e84-4157-a89c-1a787c207c23" absoluteBounds="6.25, 16.75, 2, 2.0183333954215072">
+      <DataClassMoniker Name="/MyBuyListDBContext/MCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8a42ad6-ef48-462f-8a8e-de9f28d5f673" absoluteBounds="6.2650000000000006, 17.21, 1.9700000000000002, 1.458333395421505" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.95923076923077 : 18.8517480841279); (6.95923076923077 : 19.1017480841279); (7.55461538461539 : 19.1017480841279); (7.55461538461539 : 18.8517480841279)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/MCategory/MCategory_MCategory" />
+      <nodes>
+        <classShapeMoniker Id="4cf6b009-9e84-4157-a89c-1a787c207c23" />
+        <classShapeMoniker Id="4cf6b009-9e84-4157-a89c-1a787c207c23" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2d7eac8a-cbbd-49c1-b791-4eeaccae6f89" absoluteBounds="9, 17.125, 2, 1.2197222511967034">
+      <DataClassMoniker Name="/MyBuyListDBContext/MenuCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a39d5067-cb45-4698-8337-1535af1cd20f" absoluteBounds="9.015, 17.585, 1.9700000000000002, 0.65972225119670225" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 17.7543245529632); (8.29166666666667 : 17.7543245529632 : JumpStart); (8.45833333333333 : 17.7543245529632 : JumpEnd); (8.72916666666667 : 17.7543245529632 : JumpStart); (8.89583333333333 : 17.7543245529632 : JumpEnd); (9 : 17.7543245529632)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/MCategory/MCategory_MenuCategory" />
+      <nodes>
+        <classShapeMoniker Id="4cf6b009-9e84-4157-a89c-1a787c207c23" />
+        <classShapeMoniker Id="2d7eac8a-cbbd-49c1-b791-4eeaccae6f89" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="73b230fb-431e-495a-8614-dfd2596eb718" absoluteBounds="3.75, 7.75, 2, 2.2179861814777055">
+      <DataClassMoniker Name="/MyBuyListDBContext/Article" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f23daf73-3ec0-4add-a46f-ece66463dd10" absoluteBounds="3.7650000005960464, 8.21000000089407, 1.9700000000000002, 1.6579861814777055" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="79d65f9a-990a-4547-b11f-4ef2574ca078" absoluteBounds="6.25, 28.875, 2, 5.0131251862645172">
+      <DataClassMoniker Name="/MyBuyListDBContext/Recipe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b232f4c-bed4-4de4-8a64-4299353a4962" absoluteBounds="6.265, 29.335, 1.9700000000000002, 4.4531251862645149" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 28.875); (8.56607443490112 : 28.5589255650989 : JumpStart); (8.68392556509888 : 28.4410744349011 : JumpEnd); (8.875 : 28.25); (8.875 : 27.2543245529632); (9 : 27.2543245529632)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Recipe/Recipe_UserFavoriteRecipe" />
+      <nodes>
+        <classShapeMoniker Id="79d65f9a-990a-4547-b11f-4ef2574ca078" />
+        <classShapeMoniker Id="e549ebaa-285d-4872-a049-59aa9850db26" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.20076923076923 : 28.875); (8.56607443490112 : 28.5096947958681 : JumpStart); (8.68392556509888 : 28.3918436656703 : JumpEnd); (8.8125 : 28.2632692307692); (8.8125 : 25.0043245529632); (9 : 25.0043245529632)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Recipe/Recipe_MenuRecipe" />
+      <nodes>
+        <classShapeMoniker Id="79d65f9a-990a-4547-b11f-4ef2574ca078" />
+        <classShapeMoniker Id="b99735ea-ac71-4edf-9d1c-d170f374ce00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 31.4222119252384); (8.54166666666667 : 31.4222119252384 : JumpStart); (8.70833333333333 : 31.4222119252384 : JumpEnd); (12 : 31.4222119252384)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Recipe/Recipe_MealRecipe" />
+      <nodes>
+        <classShapeMoniker Id="79d65f9a-990a-4547-b11f-4ef2574ca078" />
+        <classShapeMoniker Id="5239ccd1-8259-4918-8df0-1330ad732b30" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 32.1271622764816); (8.54166666666667 : 32.1271622764816 : JumpStart); (8.70833333333333 : 32.1271622764816 : JumpEnd); (9 : 32.1271622764816)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Recipe/Recipe_RecipeCategory" />
+      <nodes>
+        <classShapeMoniker Id="79d65f9a-990a-4547-b11f-4ef2574ca078" />
+        <classShapeMoniker Id="e91dba63-cd26-4d06-a481-92353ad6904a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d7c5b1f6-7363-4669-b843-685487748d76" absoluteBounds="6.25, 19.875, 2, 3.6155556838711114">
+      <DataClassMoniker Name="/MyBuyListDBContext/Menu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43b330f7-5384-4e1c-b199-bd5eb1ce58e8" absoluteBounds="6.2650000000000006, 20.335, 1.9700000000000002, 3.05555568387111" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 19.90625); (8.29166666666667 : 19.90625 : JumpStart); (8.45833333333333 : 19.90625 : JumpEnd); (9.09375 : 19.90625); (9.09375 : 24.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Menu/Menu_MenuRecipe" />
+      <nodes>
+        <classShapeMoniker Id="d7c5b1f6-7363-4669-b843-685487748d76" />
+        <classShapeMoniker Id="b99735ea-ac71-4edf-9d1c-d170f374ce00" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.60461588461538 : 19.875); (6.60461588461538 : 19.3517480841279); (8.29166666666667 : 19.3517480841279 : JumpStart); (8.45833333333333 : 19.3517480841279 : JumpEnd); (8.5 : 19.3517480841279); (8.5 : 18.7234089782015); (8.72916666666667 : 18.7234089782015 : JumpStart); (8.89583333333333 : 18.7234089782015 : JumpEnd); (8.96354166666667 : 18.7234089782015 : JumpStart); (9.13020833333333 : 18.7234089782015 : JumpEnd); (11.0729166666667 : 18.7234089782015 : JumpStart); (11.2395833333333 : 18.7234089782015 : JumpEnd); (12 : 18.7234089782015)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Menu/Menu_ShoppingListAdditionalItem" />
+      <nodes>
+        <classShapeMoniker Id="d7c5b1f6-7363-4669-b843-685487748d76" />
+        <classShapeMoniker Id="62f1c03a-52de-414b-9229-0ba888558e58" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 19.890625); (9.046875 : 19.890625); (9.046875 : 18.3836491059264)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Menu/Menu_MenuCategory" />
+      <nodes>
+        <classShapeMoniker Id="d7c5b1f6-7363-4669-b843-685487748d76" />
+        <classShapeMoniker Id="2d7eac8a-cbbd-49c1-b791-4eeaccae6f89" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 19.5944238504767); (5.875 : 19.9694238504767); (5.875 : 19.5); (6.00357443490112 : 19.6285744349011 : JumpStart); (6.12142556509888 : 19.7464255650989 : JumpEnd); (6.25 : 19.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/MenuType/MenuType_Menu" />
+      <nodes>
+        <classShapeMoniker Id="3fe2d66d-65f2-49be-8774-36ad34f1ad2c" />
+        <classShapeMoniker Id="d7c5b1f6-7363-4669-b843-685487748d76" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="08b11b65-f797-4c70-9c9f-a0bd1505a09d" absoluteBounds="3.5, 20.375, 2, 2.6172917535901092">
+      <DataClassMoniker Name="/MyBuyListDBContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a32533a0-b101-408d-a83e-148d94c97a29" absoluteBounds="3.5149999999999997, 20.835, 1.9700000000000002, 2.057291753590107" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 23.1090723177791); (4.5 : 27.6329980841279); (4.94791916666667 : 27.6329980841279 : JumpStart); (5.11458583333333 : 27.6329980841279 : JumpEnd); (5.21354541666667 : 27.6329980841279 : JumpStart); (5.38021208333333 : 27.6329980841279 : JumpEnd); (6.87589743589744 : 27.6329980841279 : JumpStart); (7.0425641025641 : 27.6329980841279 : JumpEnd); (7.47128205128206 : 27.6329980841279 : JumpStart); (7.63794871794872 : 27.6329980841279 : JumpEnd); (8.32445612820517 : 27.6329980841279 : JumpStart); (8.49112279487184 : 27.6329980841279 : JumpEnd); (8.72916666666667 : 27.6329980841279 : JumpStart); (8.95833333333333 : 27.6329980841279 : JumpEnd); (9 : 27.6329980841279)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/User/User_UserFavoriteRecipe" />
+      <nodes>
+        <classShapeMoniker Id="08b11b65-f797-4c70-9c9f-a0bd1505a09d" />
+        <classShapeMoniker Id="e549ebaa-285d-4872-a049-59aa9850db26" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0312525 : 23.1090723177791); (5.0312525 : 31.5066846261919); (5.21354541666667 : 31.5066846261919 : JumpStart); (5.38021208333333 : 31.5066846261919 : JumpEnd); (6.25 : 31.5066846261919)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/User/User_Recipe" />
+      <nodes>
+        <classShapeMoniker Id="08b11b65-f797-4c70-9c9f-a0bd1505a09d" />
+        <classShapeMoniker Id="79d65f9a-990a-4547-b11f-4ef2574ca078" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 21.7420361588895); (6.25 : 21.7420361588895)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/User/User_Menu" />
+      <nodes>
+        <classShapeMoniker Id="08b11b65-f797-4c70-9c9f-a0bd1505a09d" />
+        <classShapeMoniker Id="d7c5b1f6-7363-4669-b843-685487748d76" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 21.7543245529632); (3.5 : 21.7543245529632)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/UserType/UserType_User" />
+      <nodes>
+        <classShapeMoniker Id="be498939-eac1-493c-b9c0-1b6f8286606a" />
+        <classShapeMoniker Id="08b11b65-f797-4c70-9c9f-a0bd1505a09d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4d7b5d10-838c-409b-8714-22b4942c2213" absoluteBounds="12, 15.125, 2, 1.2197222511967034">
+      <DataClassMoniker Name="/MyBuyListDBContext/UserFavoriteMenu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="465229b3-aece-4ffe-8f4f-d78e57dabde6" absoluteBounds="12.015, 15.585, 1.9700000000000002, 0.65972225119670225" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 19.9703836153846); (8.31607443490112 : 19.9043091804835 : JumpStart); (8.43392556509888 : 19.7864580502857 : JumpEnd); (8.8125 : 19.4078836153846); (8.8125 : 16.7586491059264); (11.0729166666667 : 16.7586491059264 : JumpStart); (11.2395833333333 : 16.7586491059264 : JumpEnd); (11.6259671916199 : 16.7586491059264); (12.0009671916199 : 16.3836491059264)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Menu/Menu_UserFavoriteMenu" />
+      <nodes>
+        <classShapeMoniker Id="d7c5b1f6-7363-4669-b843-685487748d76" />
+        <classShapeMoniker Id="4d7b5d10-838c-409b-8714-22b4942c2213" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 20.375); (4.5 : 19.8444238504767); (5.75 : 19.8444238504767); (5.75 : 14.875); (7.41666666666667 : 14.875 : JumpStart); (7.58333333333333 : 14.875 : JumpEnd); (11.625 : 14.875); (11.625 : 15.7543245529632); (12 : 15.7543245529632)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/User/User_UserFavoriteMenu" />
+      <nodes>
+        <classShapeMoniker Id="08b11b65-f797-4c70-9c9f-a0bd1505a09d" />
+        <classShapeMoniker Id="4d7b5d10-838c-409b-8714-22b4942c2213" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="29d7ee62-94c1-417c-a5e0-cf4d16befbfc" absoluteBounds="12, 20.375, 2, 2.6172917535901092">
+      <DataClassMoniker Name="/MyBuyListDBContext/Meal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e7cf7464-dafc-4343-aac3-d4f02caf3ef8" absoluteBounds="12.015, 20.835, 1.9700000000000002, 2.057291753590107" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14 : 23.1075328562406); (14.375 : 23.4825328562406); (14.375 : 30.375); (14.3714255650989 : 30.3785744349011 : JumpStart); (14.2535744349011 : 30.4964255650989 : JumpEnd); (14.2151755650989 : 30.5348244349011 : JumpStart); (14.0973244349011 : 30.6526755650989 : JumpEnd); (14 : 30.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Meal/Meal_MealRecipe" />
+      <nodes>
+        <classShapeMoniker Id="29d7ee62-94c1-417c-a5e0-cf4d16befbfc" />
+        <classShapeMoniker Id="5239ccd1-8259-4918-8df0-1330ad732b30" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 10.4072549183412); (11.8125 : 10.9697549183412); (11.8125 : 21.7420361588895); (12 : 21.7420361588895)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/CourseType/CourseType_Meal" />
+      <nodes>
+        <classShapeMoniker Id="11ed20db-2354-48d3-bab2-a095339861ce" />
+        <classShapeMoniker Id="29d7ee62-94c1-417c-a5e0-cf4d16befbfc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 34.125); (11.625 : 33.75); (11.625 : 22.4568062383343); (12 : 22.4568062383343)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/MealType/MealType_Meal" />
+      <nodes>
+        <classShapeMoniker Id="da1422dd-d21f-49b8-be8b-a40849e67092" />
+        <classShapeMoniker Id="29d7ee62-94c1-417c-a5e0-cf4d16befbfc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 19.921875); (8.29166666666667 : 19.921875 : JumpStart); (8.45833333333333 : 19.921875 : JumpEnd); (13 : 19.921875); (13 : 20.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Menu/Menu_Meal" />
+      <nodes>
+        <classShapeMoniker Id="d7c5b1f6-7363-4669-b843-685487748d76" />
+        <classShapeMoniker Id="29d7ee62-94c1-417c-a5e0-cf4d16befbfc" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2f4031d8-b9fa-4cc6-8ac1-39a9014768c6" absoluteBounds="14.75, 2.125, 2, 1.8186806093653041">
+      <DataClassMoniker Name="/MyBuyListDBContext/GeneralList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aa7cf4b3-d7dc-4931-aacc-49e23cffb013" absoluteBounds="14.765000000596046, 2.5850000008940697, 1.9700000000000002, 1.2586806093653042" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="71a1feb8-17fe-484f-9c59-36125aa30780" absoluteBounds="17.5, 1, 2, 1.2197222511967021">
+      <DataClassMoniker Name="/MyBuyListDBContext/GeneralListReciep" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7a81eee-f01e-44e3-932e-02823d0c1c35" absoluteBounds="17.515000000596046, 1.4600000008940697, 1.9700000000000002, 0.65972225119670225" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(15.75 : 2.125); (15.75 : 1.5624995); (17.5 : 1.5624995)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/GeneralList/GeneralList_GeneralListReciep" />
+      <nodes>
+        <classShapeMoniker Id="2f4031d8-b9fa-4cc6-8ac1-39a9014768c6" />
+        <classShapeMoniker Id="71a1feb8-17fe-484f-9c59-36125aa30780" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b4be1aa7-befd-4e19-a7c4-49dded8a8d80" absoluteBounds="17.5, 3, 2, 2.0183333954215046">
+      <DataClassMoniker Name="/MyBuyListDBContext/GeneralListDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8a426224-44bb-4478-ab97-beecae6865d7" absoluteBounds="17.515000000596046, 3.4600000008940697, 1.9700000000000002, 1.458333395421505" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(16.75 : 3.50798666978876); (17.5 : 3.50798666978876)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/GeneralList/GeneralList_GeneralListDetail" />
+      <nodes>
+        <classShapeMoniker Id="2f4031d8-b9fa-4cc6-8ac1-39a9014768c6" />
+        <classShapeMoniker Id="b4be1aa7-befd-4e19-a7c4-49dded8a8d80" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="37940638-1c1f-4cd5-8d0a-2bdab6ea20a4" absoluteBounds="0.75, 2.75, 2, 1.6190278233091036">
+      <DataClassMoniker Name="/MyBuyListDBContext/SummeryList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6912439c-2424-435b-87da-83c3b0bcbc63" absoluteBounds="0.76500000059604645, 3.2100000008940697, 1.9700000000000002, 1.0590278233091035" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fcd5f128-4104-4a02-b231-8adab552b6d2" absoluteBounds="3.5, 1.125, 2, 2.2179861814777055">
+      <DataClassMoniker Name="/MyBuyListDBContext/SummeryListDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cb8db49b-6ce1-4402-b202-86b7e4d40dc3" absoluteBounds="3.5150000005960464, 1.5850000008940697, 1.9700000000000002, 1.6579861814777055" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 3.04649309073885); (3.5 : 3.04649309073885)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyBuyListDBContext/SummeryList/SummeryList_SummeryListDetail" />
+      <nodes>
+        <classShapeMoniker Id="37940638-1c1f-4cd5-8d0a-2bdab6ea20a4" />
+        <classShapeMoniker Id="fcd5f128-4104-4a02-b231-8adab552b6d2" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="84909384-d53b-43a6-acfa-1acceed88884" absoluteBounds="3.5, 4.125, 2, 1.8186806093653036">
+      <DataClassMoniker Name="/MyBuyListDBContext/SummerySource" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49bb62d2-85cd-4990-a6a7-b3bd06c8ef6a" absoluteBounds="3.5150000005960464, 4.58500000089407, 1.9700000000000002, 1.2586806093653042" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 4.43019859502713); (1.75 : 5.22308646730232); (3.5 : 5.22308646730232)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/SummeryList/SummeryList_SummerySource" />
+      <nodes>
+        <classShapeMoniker Id="37940638-1c1f-4cd5-8d0a-2bdab6ea20a4" />
+        <classShapeMoniker Id="84909384-d53b-43a6-acfa-1acceed88884" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="52d7bb29-ffa2-4d38-92cd-b550942a18e1" absoluteBounds="14.75, 6.75, 2, 5.0131251862645154">
+      <DataClassMoniker Name="/MyBuyListDBContext/RecipesView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1b73aff4-3e11-4fb4-95b8-470fda235f7c" absoluteBounds="14.765, 7.2100000000000009, 1.9700000000000002, 4.4531251862645149" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ccf00159-50f1-4f1e-81ee-8255ec866ed5" absoluteBounds="9, 29.5, 2, 1.4193750372529053">
+      <DataClassMoniker Name="/MyBuyListDBContext/RecipesInShoppingList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="76f7f450-2b59-4bf7-9c98-419cbd1bce9a" absoluteBounds="9.015, 29.96, 1.9700000000000002, 0.859375037252903" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 30.2347119252384); (8.54166666666667 : 30.2347119252384 : JumpStart); (8.70833333333333 : 30.2347119252384 : JumpEnd); (9 : 30.2347119252384)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Recipe/Recipe_RecipesInShoppingList" />
+      <nodes>
+        <classShapeMoniker Id="79d65f9a-990a-4547-b11f-4ef2574ca078" />
+        <classShapeMoniker Id="ccf00159-50f1-4f1e-81ee-8255ec866ed5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.968748 : 23.1090723177791); (3.968748 : 28.625); (8.46589643589744 : 28.625 : JumpStart); (8.63256310256411 : 28.625 : JumpEnd); (8.75 : 28.625); (8.75 : 29.8361039626192); (9 : 29.8361039626192)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/User/User_RecipesInShoppingList" />
+      <nodes>
+        <classShapeMoniker Id="08b11b65-f797-4c70-9c9f-a0bd1505a09d" />
+        <classShapeMoniker Id="ccf00159-50f1-4f1e-81ee-8255ec866ed5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="fd5f7307-050c-4e47-a6c0-618200fec779" absoluteBounds="9.25, 20, 2, 3.4159028978149131">
+      <DataClassMoniker Name="/MyBuyListDBContext/Food" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e86d62ef-7559-4079-af57-a6d2d417c4ba" absoluteBounds="9.265, 20.46, 1.9700000000000002, 2.8559028978149095" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 23.0736867023945); (5.75 : 23.3236867023945); (5.75 : 23.8271712959806); (5.85416666666667 : 23.8271712959806 : JumpStart); (6.02083333333333 : 23.8271712959806 : JumpEnd); (8.9676923076923 : 23.8271712959806); (9.03482443490112 : 23.7600391687718 : JumpStart); (9.15267556509888 : 23.642188038574 : JumpEnd); (9.25 : 23.5448636036729)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/User/User_Food" />
+      <nodes>
+        <classShapeMoniker Id="08b11b65-f797-4c70-9c9f-a0bd1505a09d" />
+        <classShapeMoniker Id="fd5f7307-050c-4e47-a6c0-618200fec779" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.5 : 13.9375228286783); (7.5 : 16.5); (8.375 : 16.5); (8.375 : 21.7573336479903); (9.25 : 21.7573336479903)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/FoodCategory/FoodCategory_Food" />
+      <nodes>
+        <classShapeMoniker Id="4fea8042-ddf1-4188-a73d-1f5d0c2165d2" />
+        <classShapeMoniker Id="fd5f7307-050c-4e47-a6c0-618200fec779" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 23.0783020870098); (5.9375 : 23.5158020870098); (5.9375 : 23.9521712959806); (8.90884515384615 : 23.9521712959806); (9.28384515384615 : 23.5771712959806)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/User/User_Food1" />
+      <nodes>
+        <classShapeMoniker Id="08b11b65-f797-4c70-9c9f-a0bd1505a09d" />
+        <classShapeMoniker Id="fd5f7307-050c-4e47-a6c0-618200fec779" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d138102a-723d-4cca-a4bf-55c04439383c" absoluteBounds="15, 18.125, 2, 1.4193750372529053">
+      <DataClassMoniker Name="/MyBuyListDBContext/NutValue" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4a012101-537a-4d5f-8836-bbf914a3506a" absoluteBounds="15.015, 18.585, 1.9700000000000002, 0.859375037252903" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.25 : 20); (11.625 : 19.625); (11.625 : 20.0944238504767); (11.7291666666667 : 20.0944238504767 : JumpStart); (11.8958333333333 : 20.0944238504767 : JumpEnd); (12.9166666666667 : 20.0944238504767 : JumpStart); (13.0833333333333 : 20.0944238504767 : JumpEnd); (14.5 : 20.0944238504767); (15 : 19.5944238504767)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Food/Food_NutValue" />
+      <nodes>
+        <classShapeMoniker Id="fd5f7307-050c-4e47-a6c0-618200fec779" />
+        <classShapeMoniker Id="d138102a-723d-4cca-a4bf-55c04439383c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 6.34375); (16.90625 : 6.34375); (16.90625 : 18.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/NutItem/NutItem_NutValue" />
+      <nodes>
+        <classShapeMoniker Id="f092113b-f4b0-43a4-b8c8-0f4833577c17" />
+        <classShapeMoniker Id="d138102a-723d-4cca-a4bf-55c04439383c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="205b5b3c-20c3-4bb8-8a32-cf1b1daccae3" absoluteBounds="15, 28.375, 2, 1.8186806093653054">
+      <DataClassMoniker Name="/MyBuyListDBContext/MissingListDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43d783c9-5ff4-4d24-b11a-1399a26503e7" absoluteBounds="15.015, 28.835, 1.9700000000000002, 1.2586806093653042" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.15625 : 23.5771712959806); (11.15625 : 28.90625); (14.2291666666667 : 28.90625 : JumpStart); (14.3958333333333 : 28.90625 : JumpEnd); (15 : 28.90625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Food/Food_MissingListDetail" />
+      <nodes>
+        <classShapeMoniker Id="fd5f7307-050c-4e47-a6c0-618200fec779" />
+        <classShapeMoniker Id="205b5b3c-20c3-4bb8-8a32-cf1b1daccae3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="976a4b01-d78b-46b2-9539-aa580ecf9709" absoluteBounds="9, 15.125, 2, 1.2197222511967034">
+      <DataClassMoniker Name="/MyBuyListDBContext/MenusInShoppingList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8ba663a8-cc20-4e74-a218-bc0ba6bac2c4" absoluteBounds="9.015, 15.585, 1.9700000000000002, 0.65972225119670225" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.21769230769231 : 19.875); (8.31607443490112 : 19.7766178727912 : JumpStart); (8.43392556509888 : 19.6587667425934 : JumpEnd); (8.625 : 19.4676923076923); (8.625 : 15.7543245529632); (9 : 15.7543245529632)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Menu/Menu_MenusInShoppingList" />
+      <nodes>
+        <classShapeMoniker Id="d7c5b1f6-7363-4669-b843-685487748d76" />
+        <classShapeMoniker Id="976a4b01-d78b-46b2-9539-aa580ecf9709" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 20.4365374615385); (6.0625 : 19.8740374615385); (6.0625 : 16.1002388294448); (7.41666666666667 : 16.1002388294448 : JumpStart); (7.58333333333333 : 16.1002388294448 : JumpEnd); (9 : 16.1002388294448)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/User/User_MenusInShoppingList" />
+      <nodes>
+        <classShapeMoniker Id="08b11b65-f797-4c70-9c9f-a0bd1505a09d" />
+        <classShapeMoniker Id="976a4b01-d78b-46b2-9539-aa580ecf9709" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="acbbf809-e68b-4c21-a7d4-0ea6165ae727" absoluteBounds="12.25, 11.375, 2, 2.0183333954215055">
+      <DataClassMoniker Name="/MyBuyListDBContext/SavedList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cbcfe470-1a12-443d-a505-151e5d59ddfa" absoluteBounds="12.265, 11.835, 1.9700000000000002, 1.458333395421505" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f1d2245f-7c52-4196-959f-0b5ac52e9971" absoluteBounds="15, 20.875, 2, 1.8186806093653054">
+      <DataClassMoniker Name="/MyBuyListDBContext/SavedListDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="786d1ee9-0ce7-4195-94ea-95e02b997b20" absoluteBounds="15.015, 21.335, 1.9700000000000002, 1.2586806093653042" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.25 : 13.4767480841279); (14.625 : 13.8517480841279); (14.625 : 21.8204866697888); (15 : 21.8204866697888)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/SavedList/SavedList_SavedListDetail" />
+      <nodes>
+        <classShapeMoniker Id="acbbf809-e68b-4c21-a7d4-0ea6165ae727" />
+        <classShapeMoniker Id="f1d2245f-7c52-4196-959f-0b5ac52e9971" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 23.3743718068798); (16 : 23.3743718068798); (16 : 22.7659733395775)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Food/Food_SavedListDetail" />
+      <nodes>
+        <classShapeMoniker Id="fd5f7307-050c-4e47-a6c0-618200fec779" />
+        <classShapeMoniker Id="f1d2245f-7c52-4196-959f-0b5ac52e9971" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b61cc93b-b8d6-4b08-94b0-8de7afb70bde" absoluteBounds="12, 25.875, 2, 2.2179861814777091">
+      <DataClassMoniker Name="/MyBuyListDBContext/Ingredient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="288a0052-27b5-4478-bf18-fda0eb287b2d" absoluteBounds="12.015, 26.335, 1.9700000000000002, 1.6579861814777055" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 28.9242297692308); (8.67422976923076 : 28.5); (13 : 28.5); (13 : 28.1875228286783)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Recipe/Recipe_Ingredient" />
+      <nodes>
+        <classShapeMoniker Id="79d65f9a-990a-4547-b11f-4ef2574ca078" />
+        <classShapeMoniker Id="b61cc93b-b8d6-4b08-94b0-8de7afb70bde" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.1875025 : 23.5771712959806); (11.1875025 : 26.21875); (12 : 26.21875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Food/Food_Ingredient" />
+      <nodes>
+        <classShapeMoniker Id="fd5f7307-050c-4e47-a6c0-618200fec779" />
+        <classShapeMoniker Id="b61cc93b-b8d6-4b08-94b0-8de7afb70bde" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="044598d2-ab45-4a21-bdbb-864c670593e7" absoluteBounds="15, 24.375, 2, 2.6172917535901092">
+      <DataClassMoniker Name="/MyBuyListDBContext/MeasurementUnitsConvert" />
+      <nestedChildShapes>
+        <elementListCompartment Id="af440e13-02a5-4605-81cd-738d8afa7c11" absoluteBounds="15.015, 24.835, 1.9700000000000002, 2.057291753590107" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.1249975 : 23.5771712959806); (11.1249975 : 25.7543245529632); (11.5416666666667 : 25.7543245529632 : JumpStart); (11.7083333333333 : 25.7543245529632 : JumpEnd); (14.0729166666667 : 25.7543245529632 : JumpStart); (14.4583333333333 : 25.7543245529632 : JumpEnd); (15 : 25.7543245529632)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/Food/Food_MeasurementUnitsConvert" />
+      <nodes>
+        <classShapeMoniker Id="fd5f7307-050c-4e47-a6c0-618200fec779" />
+        <classShapeMoniker Id="044598d2-ab45-4a21-bdbb-864c670593e7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="05755cac-0602-4fe8-bbfb-f1d57073cd07" absoluteBounds="6.25, 34.875, 2, 1.6190278233091036">
+      <DataClassMoniker Name="/MyBuyListDBContext/MissingList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4c2a6650-ae7c-4b66-a7a5-6bceb2f37263" absoluteBounds="6.2650000000000006, 35.335, 1.9700000000000002, 1.0590278233091035" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 36.1060612227519); (16 : 36.1060612227519); (16 : 30.2659733395775)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/MissingList/MissingList_MissingListDetail" />
+      <nodes>
+        <classShapeMoniker Id="05755cac-0602-4fe8-bbfb-f1d57073cd07" />
+        <classShapeMoniker Id="205b5b3c-20c3-4bb8-8a32-cf1b1daccae3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.29687875 : 23.1090723177791); (5.29687875 : 35.7150992975136); (6.25 : 35.7150992975136)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/User/User_MissingList" />
+      <nodes>
+        <classShapeMoniker Id="08b11b65-f797-4c70-9c9f-a0bd1505a09d" />
+        <classShapeMoniker Id="05755cac-0602-4fe8-bbfb-f1d57073cd07" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4b3321a6-656e-49b8-a1cc-e6f7f14ca94a" absoluteBounds="12.75, 33.375, 2, 2.0183333954215072">
+      <DataClassMoniker Name="/MyBuyListDBContext/MeasurementUnit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2cddd479-b651-4a4b-967d-b945245df24b" absoluteBounds="12.765, 33.835, 1.9700000000000002, 1.458333395421505" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.5625 : 33.375); (14.5625 : 29.6173641697888); (15 : 29.6173641697888)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/MeasurementUnit/MeasurementUnit_MissingListDetail" />
+      <nodes>
+        <classShapeMoniker Id="4b3321a6-656e-49b8-a1cc-e6f7f14ca94a" />
+        <classShapeMoniker Id="205b5b3c-20c3-4bb8-8a32-cf1b1daccae3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.624998 : 33.375); (13.624998 : 32.4694238504767); (14.0729166666667 : 32.4694238504767 : JumpStart); (14.2395833333333 : 32.4694238504767 : JumpEnd); (14.25 : 32.4694238504767); (14.25 : 22.3244820046831); (15 : 22.3244820046831)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/MeasurementUnit/MeasurementUnit_SavedListDetail" />
+      <nodes>
+        <classShapeMoniker Id="4b3321a6-656e-49b8-a1cc-e6f7f14ca94a" />
+        <classShapeMoniker Id="f1d2245f-7c52-4196-959f-0b5ac52e9971" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.3125 : 33.375); (14.3125 : 27.0312614143391); (14 : 27.0312614143391)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/MeasurementUnit/MeasurementUnit_Ingredient" />
+      <nodes>
+        <classShapeMoniker Id="4b3321a6-656e-49b8-a1cc-e6f7f14ca94a" />
+        <classShapeMoniker Id="b61cc93b-b8d6-4b08-94b0-8de7afb70bde" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.15625 : 33.375); (14.15625 : 25.0334097764816); (15 : 25.0334097764816)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyBuyListDBContext/MeasurementUnit/MeasurementUnit_MeasurementUnitsConvert" />
+      <nodes>
+        <classShapeMoniker Id="4b3321a6-656e-49b8-a1cc-e6f7f14ca94a" />
+        <classShapeMoniker Id="044598d2-ab45-4a21-bdbb-864c670593e7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="dcb4030d-e3fb-42ca-a368-4a0d915c5fa1" absoluteBounds="10.125, 1.375, 2, 3.016597325702508">
+      <DataClassMoniker Name="/MyBuyListDBContext/UserShoppingList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7991779c-c8d1-4a14-b855-3a4720470f2a" absoluteBounds="10.14, 1.835, 1.9700000000000002, 2.456597325702508" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

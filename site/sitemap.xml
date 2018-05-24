@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://mybuylist.com/</loc>
+    <priority>1.000</priority>
+  </url>
+  <url>
+    <loc>http://mybuylist.com/tips.aspx</loc>
+    <priority>0.5000</priority>
+  </url>
+  <url>
+    <loc>http://mybuylist.com/terms.aspx</loc>
+    <priority>0.5000</priority>
+  </url>
+  <url>
+    <loc>http://mybuylist.com/howtouse.aspx</loc>
+    <priority>0.5000</priority>
+  </url>
+  <url>
+    <loc>http://mybuylist.com/contactus.aspx</loc>
+    <priority>0.5000</priority>
+  </url>
+  <url>
+    <loc>http://mybuylist.com/searchrecipes.aspx</loc>
+    <priority>0.5000</priority>
+  </url>
+  <url>
+    <loc>http://mybuylist.com/IamAbot.aspx</loc>
+    <priority>0.5000</priority>
+  </url>
+</urlset>

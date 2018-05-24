@@ -1,0 +1,482 @@
+﻿/*Tablets (Landscape)*/
+@media screen and (max-width: 1024px) and (orientation: landscape){
+    #main {
+        margin: 0px auto;
+        width: 1024px;
+    }
+    #top_menu_bar {
+        background-image: url('../../Images/bgr_TopMenu.png');
+        background-repeat: no-repeat;
+        width: 875px;
+        height: 52px;
+        color: #FFF1F4;
+        font-size: 15px;
+        text-align: center;
+        font-weight: bold;
+        float: left;
+    }
+        #top_menu_bar ul {
+            padding-right: 137px;
+        }
+        #top_menu_bar li {
+            list-style-type: none;
+            float: right;
+            padding-right: 54px;
+            /*padding-left: 112px;*/
+            padding-left: 10%;
+        }
+            #top_menu_bar li a {
+                text-decoration: none;
+                line-height: 50px;
+                font-size: 18px;
+                color: #FFF1F4;
+            }
+            #top_menu_bar li:first-child {
+                padding-right: 40px;
+            }
+            #top_menu_bar li:last-child {
+                padding-left: 0px;
+            }
+    #mbl_logo {
+        width: 225px;
+        height: 258px;
+        position: absolute;
+        top: -112px;
+        right: -50px;
+        z-index: 1;
+    }
+        /*#mbl_logo img {
+            width: 80%;
+        }*/
+}
+
+/*Tablets (Portrate)*/
+@media screen and (max-width: 768px) {
+    #main {
+        margin: 0px auto;
+        width: 768px;
+    }
+    #top_menu_and_logo {
+        width: 100%;
+        clear: both;
+        position: relative;
+    }
+    #top_menu_bar {
+        background-image: url('../../Images/bgr_TopMenu.png');
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 52px;
+        color: #FFF1F4;
+        font-size: 15px;
+        text-align: center;
+        font-weight: bold;
+        float: left;
+    }
+        #top_menu_bar ul {
+            padding-right: 137px;
+        }
+        #top_menu_bar li {
+            list-style-type: none;
+            float: right;
+            padding-right: 44px;
+            padding-left: 5%;
+        }
+            #top_menu_bar li a {
+                text-decoration: none;
+                line-height: 50px;
+                font-size: 18px;
+                color: #FFF1F4;
+            }
+            #top_menu_bar li:first-child {
+                padding-right: 40px;
+            }
+            #top_menu_bar li:last-child {
+                padding-left: 0px;
+            }
+    #mbl_logo {
+        width: 225px;
+        height: 258px;
+        position: absolute;
+        top: -112px;
+        right: -50px;
+        z-index: 1;
+    }
+        /*#mbl_logo img {
+            width: 80%;
+        }*/
+    #slideshow {
+        background-repeat: no-repeat;
+        width: 100%;
+        height: auto;
+        margin: 0px auto;
+        margin-top: 20px;
+    }
+    #slideshow_text {
+        width: 96%;
+        margin-top: 100px;
+        padding-right: 5px;
+        margin-right: 25px;
+    }
+    #header div.search-box-wrapper {
+        width: 100%;
+    }
+    #header_links
+    {
+        color: #666563;
+        font-size: 12px;
+        padding-left: 25px;
+        float: left;
+        width: 39%;
+    }
+    #header_links a
+    {
+        color: #666563;
+        text-decoration: none;
+    }
+    #header_links a:hover
+    {
+        color: #666563;
+        text-decoration: underline;
+    }
+    #footer {
+        width: 77%;
+        color: #676566;
+        font-size: 10px;
+        clear: both;
+    }
+    #bottom_links {
+        clear: both;
+        text-align: right;
+        float: right;
+        font-size: 10px;
+        padding-top: 16px;
+        margin-right: 5px;
+    }
+}
+
+/*Smartphone*/
+@media screen and (max-width: 320px) {
+    #main {
+        margin: 0px auto;
+        width: 100%;
+    }
+    #top_menu_bar {
+        background-image: url('../../Images/bgr_TopMenu.png');
+        width: 100%;
+        float: left;
+    }
+        #top_menu_bar ul {
+            padding-right: 20%;
+        }
+        #top_menu_bar li {
+            padding-right: 3%;
+            padding-left: 5%;
+        }
+            #top_menu_bar li:first-child {
+                padding-right: 2%;
+            }
+            #top_menu_bar li:last-child {
+                padding-left: 0px;
+            }
+    #mbl_logo {
+        width: 29%;
+        height: auto;
+        top: -15px;
+        right: -12px;
+    }
+        #mbl_logo img {
+            width: 80%;
+        }
+    #slideshow {
+        background-repeat: no-repeat;
+        width: 61%;
+        height: auto;
+        margin-top: 20px;
+    }
+    #slideshow_text {
+        width: 91%;
+        margin-top: 10px;
+    }
+
+/*header*/
+    #header div.body {
+        clear: both;
+        height: 1%;
+        margin-top: 14px;
+        margin-bottom: 2px;
+    }
+    #header div.search-box-wrapper {
+        width: 100%;
+        margin-right: 7px;
+    }
+        #header div.search-box-wrapper div {
+            width: 100%;
+        }
+
+    .header_selectedRecipes {
+        display: none;
+    }
+    #header_links {
+        width: 39%;
+    }
+    #footer {
+        width: 100%;
+    }
+    #bottom_links {
+        text-align: center;
+        width: 100%;
+    }
+
+/*recipes*/
+    #reciep-wrapper {
+    }
+
+        #reciep-wrapper div.ShoppingList {
+            float: left;
+        }
+
+        #reciep-wrapper div.recipes {
+            float: right;
+        }
+            #reciep-wrapper div.recipes_header div.top {
+                margin-top: 40px;
+                margin-bottom: 18px;
+                padding: 0px;
+                padding-right: 2px;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 1.3em;
+                text-align: justify;
+            }
+
+        #reciep-wrapper div.recipes_header div.search {
+            display: none;
+        }
+
+        #reciep-wrapper div.recipes_header div.sort {
+            display: none;
+        }
+
+        #reciep-wrapper div.recipes_header div.add {
+            display: none;
+        }
+
+        #reciep-wrapper div.recipe_list div.recipe_box {
+            background-color: white;
+            overflow-y: auto;
+            height: 1%;
+            background-image: none;
+            width: 95%;
+        }
+
+            #reciep-wrapper div.recipe_list div.recipe_box div.body {
+                padding-top: 10px;
+            }
+
+        #reciep-wrapper div.recipe_list div.recipe_main_category {
+            float: none;
+            padding-right: 0px;
+        }
+
+        #reciep-wrapper div.recipe_list div.recipe_inner_box {
+            width: 100%;
+            float: none;
+        }
+
+        #reciep-wrapper div.recipe_list div.recipe_thumbnail_box {
+            margin-top: -50px;
+            margin-left: 3px;
+        }
+
+        #reciep-wrapper div.recipe_list div.recipe_tags {
+            display: none;
+        }
+
+        #reciep-wrapper div.recipe_list div.recipe_description {
+            display: none;
+        }
+
+        #reciep-wrapper div.recipe_list div.pager {
+            width: 100%;
+            text-align: center;
+        }
+
+        #reciep-wrapper div.recipe_list div.published_date {
+            display: none;
+        }
+
+        #reciep-wrapper div.recipe_list div.recipe_title a {
+            font-size: 1.6em;
+        }
+
+        #reciep-wrapper div.recipe_list div.recipe_actions_box {
+            /*margin-left: 6px;*/
+            font-size: 1.3em;
+        }
+
+/*Reciepe*/
+    #recipe_right_pane {
+        float: right;
+        width: 100%;
+        padding: 0;
+    }
+    #recipe_left_pane {
+        display: none;
+    }
+    #recipe_wrapper {
+        width: 98%;
+        padding: 0;
+        margin-right: 7px;
+        font-size: 12pt;
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+        #recipe_wrapper div.wrapper_bottom_tab2 {
+            display: none;
+        }
+    #recipe_wrapper_top {
+        background-image: none;
+    }
+    #recipe_wrapper_middle {
+        background-image: none;
+        padding-top: 0px;
+    }
+    #recipe_name {
+        margin-bottom: 30px; 
+        height: 22px;
+    }
+        #recipe_name img {
+            float: none;
+        }
+        #recipe_name div {
+            float: none;
+            height: 1%;
+        }
+}
+
+@media screen and (max-width: 480px) and (orientation: landscape) {
+    #main {
+        margin: 0px auto;
+        width: 100%;
+    }
+    #top_menu_bar {
+        background-image: url('../../Images/bgr_TopMenu.png');
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 52px;
+        color: #FFF1F4;
+        font-size: 15px;
+        text-align: center;
+        font-weight: bold;
+        float: left;
+    }
+        #top_menu_bar ul {
+            padding-right: 20%;
+        }
+        #top_menu_bar li {
+            list-style-type: none;
+            float: right;
+            padding-right: 13%;
+            padding-left: 5%;
+        }
+            #top_menu_bar li a {
+                text-decoration: none;
+                line-height: 50px;
+                font-size: 18px;
+                color: #FFF1F4;
+            }
+            #top_menu_bar li:first-child {
+                padding-right: 3%;
+            }
+    #mbl_logo {
+        width: 29%;
+        height: auto;
+        position: absolute;
+        top: -44px;
+        right: -12px;
+        z-index: 1;
+    }
+        #mbl_logo img {
+            width: 80%;
+        }
+    #slideshow {
+        background-repeat: no-repeat;
+        width: 61%;
+        height: auto;
+        margin-top: 20px;
+    }
+    #slideshow_text {
+        width: 92%;
+        margin-top: 10px;
+    }
+
+/*header*/
+    #header div.body {
+        clear: both;
+        height: 1%;
+        margin-top: 14px;
+        margin-bottom: 2px;
+    }
+    #header div.search-box-wrapper {
+        width: 100%;
+    }
+        #header div.search-box-wrapper div {
+            width: 68%;
+        }
+
+    .header_selectedRecipes {
+        display: none;
+    }
+    #header_links {
+        color: #666563;
+        font-size: 12px;
+        padding-left: 30px;
+        float: left;
+        width: 39%;
+    }
+        #header_links a {
+            color: #666563;
+            text-decoration: none;
+        }
+            #header_links a:hover {
+                color: #666563;
+                text-decoration: underline;
+            }
+    #footer {
+        width: 100%;
+        color: #676566;
+        font-size: 10px;
+        clear: both;
+    }
+    #bottom_links {
+        text-align: center;
+        width: 100%;
+    }
+
+/*recipes*/
+    #recipes_header div.search {
+        display: none;
+    }
+    #recipes_header div.sort {
+        display: none;
+    }
+    #recipes_header div.add {
+        display: none;
+    }
+    #recipe_list div.recipe_inner_box {
+        width: 50%;
+    }
+    #recipe_list div.recipe_actions_box {
+        display: none;
+    }
+    #recipe_list div.recipe_tags {
+        display: none;
+    }
+    #recipe_list div.recipe_description {
+        display: none;
+    }
+    #recipe_list div.pager {
+        width: 100%;
+        text-align: center;
+    }
+}

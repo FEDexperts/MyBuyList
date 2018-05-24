@@ -1,0 +1,123 @@
+﻿body
+{
+}
+
+.TopBanner
+{
+	background-image: url('../../Images/New/TopBannerArea.gif');
+	background-repeat: no-repeat;
+	background-position: top right;
+	height: 81px;
+	width: 756px;
+}
+
+.Logo
+{
+	background-image: url('../../Images/New/Logo.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 146px;
+	height: 109px;
+}
+
+.SideBanner
+{
+	width: 134px;
+	height: 170px;
+}
+
+.UserLoginBoxTitle
+{
+	height: 20px;	
+	font-size: 12px;
+}
+
+.UserLoginBoxBody
+{
+	height: 111px;
+	padding-right: 5px;
+	font-size: 11px;
+}
+
+.UserLoginBox
+{
+	background-image: url('../../Images/New/LoginFrameBG.gif');
+	background-repeat: no-repeat;
+	background-position: top;
+	width: 131px;
+	height: 131px;
+}
+
+.tdLeftContentTop
+{
+	background-repeat: no-repeat;
+	background-image: url('../../Images/New/NotepadLeftEmptyAreaTop.gif');
+	width: 203px;
+	height: 18px;
+}
+
+.tdLeftContent
+{
+	background-repeat: repeat-y;
+	background-image: url('../../Images/New/NotepadLeftEmptyAreaBG.gif');
+	width: 203px;
+	height: 430px;
+}
+
+.tdLeftContentBottom
+{
+	background-repeat: no-repeat;
+	background-image: url('../../Images/New/NotepadLeftEmptyAreaBottom.gif');
+	width: 203px;
+	height: 20px;
+}
+
+.tdRightContent
+{
+	background-repeat: repeat-y;
+	background-image: url('../../Images/New/NotepadRightAreaBG.gif');
+	width: 512px;
+	height: 430px;
+	margin: 0px;
+}
+
+.tdRightContentTop
+{
+	background-image: url('../../Images/New/NotepadRightAreaTop.gif');
+	background-repeat: no-repeat;
+	height: 18px;
+	width: 512px;
+	margin: 0px;
+}
+
+.tdRightContentBottom
+{
+	background-image: url('../../Images/New/NotepadRightAreaBottom.gif');
+	background-repeat: no-repeat;
+	height: 20px;
+	width: 512px;
+	margin: 0px;
+}
+
+.leftTopNote
+{
+	background-repeat: no-repeat;
+	height: 130px;
+	width: 185px;
+	margin: 0px;
+}
+
+.NotebookTab
+{
+	background-image: url('../../Images/GrayTabBG.gif');
+	background-repeat: no-repeat;
+	height: 56px;
+	width: 60px;
+}
+.NotebookTabSelected
+{
+	background-image: url('../../Images/RedTabBG.gif');
+	background-repeat: no-repeat;
+	height: 56px;
+	width: 60px;
+}

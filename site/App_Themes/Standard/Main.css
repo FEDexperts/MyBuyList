@@ -1,0 +1,242 @@
+﻿body 
+{
+	background-color: White;
+	font-family: Arial;
+	font-size: small;
+}
+
+.text
+{
+	font-family: Arial;
+	font-size: small;
+}
+
+.gridSelect
+{
+	cursor: pointer;
+}
+.gridHover
+{
+	background-color: Yellow;
+	color: Black;
+}
+
+.ajax__validatorcallout
+{
+	direction: ltr;
+}
+
+.validatorCalloutHighlight
+{
+    background-color: lemonchiffon;
+}
+
+.AutoExtender
+{
+	margin: 0px;
+	padding: 5px 0px;
+	z-index: 99;
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: .8em;
+	font-weight: normal;
+	border: solid 1px #395a9c;
+	line-height: 20px;
+	list-style: none;
+	padding: 2px;
+	background-color: White;
+}
+
+.AutoExtenderItem
+{
+	cursor: pointer;
+}
+
+.AutoExtenderHighlight
+{
+	color: White;
+	background-color: #395a9c;
+	cursor: pointer;
+}
+
+.SideTable
+{
+	background-color:#FFFFFF;
+	border:1px solid #efefef;
+	width:230px;
+	/*padding:24px;*/
+}
+
+/*Modal Popup*/
+.modalBackground 
+{
+	background-color:Gray;
+	filter:alpha(opacity=70);
+	opacity:0.7;
+}
+
+.modalPopup {
+	background-color:#ffffdd;
+	border-width:3px;
+	border-style:solid;
+	border-color:Gray;
+	padding:3px;
+	width:250px;
+}
+
+.recipeModalPopup {
+	background-color:#ffffdd;	
+	padding-top:50px;	
+}
+/*
+.MenuRecipeModalPopup
+{
+    background-color:white;
+    padding:1px;
+    color:#656565;    
+}
+
+#mealRecipeModalPopupTitle
+{
+    clear: both;
+    background-color:#F2A20F;
+    color:White;
+    height:17px; 
+    font-weight:bold;
+    font-size:14px;
+    text-align:center;
+    padding:7px 17px 7px 0px;      
+}
+*/
+.MenuRecipeModalPopup 
+{
+    background-image: url('../../Images/bgr_DialogBoxAddRecipeToMenu.png');
+    background-repeat: no-repeat;
+    color:#656565;    
+}
+#mealRecipeModalPopupTitle
+{
+    clear: both;    
+    color:White;
+    height:15px; 
+    font-weight:bold;
+    font-size:14px;    
+    padding:12px 22px 10px 4px;      
+}
+
+.lblChooseMealRecipeName
+{
+    color:#F1A211;
+    font-weight:bold;
+    font-size:14px;    
+}
+
+.menuCategoriesModalPopup
+{
+    border:1px solid #F4A612;
+    background-color:White;
+    width:370px; 
+    padding:3px;     
+}
+
+.pnlMenuCategoriesTitle
+{
+    cursor: move; 
+    background-color: #F4A612;
+    color: White; 
+    height: 21px;
+    padding-top:3px;
+}
+.pnlCategoriesList
+{
+    width:358px;
+    height:330px;
+    padding:0px 5px 0px 5px;
+    border:1px solid #D3D3D3;    
+}
+
+#newRecipe_top {
+    background-image: url('../../Images/bgr_BoxIndex_Top.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 6px;    
+}
+#newRecipe_middle {
+    background-image: url('../../Images/bgr_BoxIndex_Middle.png');
+    background-repeat: repeat-y;
+    background-position: right;
+    padding: 26px 22px 24px 22px;
+    color:#656565;
+}
+#newRecipe_bottom {
+    background-image: url('../../Images/bgr_BoxIndex_Bottom.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 8px;    
+}
+.newRecipe_TxtBox_wm {
+    color:#656565;
+    font-weight:bold;    
+}
+
+.modalBackground2 {
+	background-color:Gray;
+	filter:alpha(opacity=70);
+	opacity:0.7;
+	z-index: 300000;
+}
+
+.btn
+{
+	background-color: #C51015;
+	color: White;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border: 0px solid white;
+	font-size: 10px;
+}
+
+.chxBox_aligned input
+{
+    margin-bottom: 0px;
+}
+
+.chxBox_aligned label
+{
+    vertical-align:top;
+}
+
+.chxBox_aligned_small input
+{
+    margin-bottom: 0px;
+    vertical-align:middle;
+}
+
+.chxBox_aligned_small label
+{
+    vertical-align:middle;
+}
+
+.radioButton_aligned input
+{
+    margin-top:2px;
+}
+
+.radioButton_aligned label
+{
+    vertical-align:top;
+}
+
+.newRecipe_txtBox_short
+{
+    width:299px;
+    height:15px;
+    background-color: #DDEBB6;
+    border:1px solid #A4CB3A;
+    margin-top: 6px;    
+}
+#article_wrapper
+{
+    margin:10px 30px 10px 30px;    
+}

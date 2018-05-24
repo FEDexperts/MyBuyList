@@ -1,0 +1,15 @@
+﻿.ingredients
+{
+	padding: 0px 7px 0px 7px;
+	width: 410px;
+}
+
+.ingredientsEditable
+{
+	height: 96px;
+}
+
+.ingredientsReadOnly
+{
+	height: 300px;
+}

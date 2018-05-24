@@ -1,0 +1,26 @@
+﻿div.roundpanel1, div.inner { color: #000; text-align: left; font-family: verdana, arial, sans-serif;}
+div.roundpanel1  { width: 564px; padding: 10px; margin: 3px; background: #e4eff4; border: solid 1px ScrollBar }
+
+div.roundpanel2, div.inner { color: #000; text-align: left; font-family: verdana, arial, sans-serif;}
+div.roundpanel2  { width: 564px; padding: 10px; margin: 3px; background: #f0f0f0; border: solid 1px ScrollBar }
+
+div.roundpanel3, div.inner { color: #000; text-align: left; font-family: verdana, arial, sans-serif;}
+div.roundpanel3  { width: 555px; padding: 2px; background: #f0f0f0; border: solid 1px ScrollBar }
+
+div.results, div.inner { color: #000; text-align: left; font-family: verdana, arial, sans-serif;}
+div.results  { width: 564px; padding: 10px; margin: 0px 3px 0px 3px; background: White; border: solid 1px ScrollBar; }
+
+div.roundpanelsearch, div.inner { color: #000; text-align: left; font-family: verdana, arial, sans-serif;}
+div.roundpanelsearch  { width: 564px; padding: 10px; margin: 3px; background: #e4eff4; border: solid 1px ScrollBar }
+
+div.top_small_menu, div.inner { color: #000; text-align: left; font-family: verdana, arial, sans-serif;}
+div.top_small_menu  { float: left; width: 92px; padding: 10px; margin: 2px; background: White; border: solid 1px ScrollBar }
+
+div.categories, div.inner { color: #000; text-align: left; font-family: verdana, arial, sans-serif;}
+div.categories  { width: 199px; border: solid 1px ScrollBar; }
+
+div.ads, div.inner { color: #000; text-align: left; font-family: verdana, arial, sans-serif;}
+div.ads  { float: left; width: 180px; padding: 1px; margin: 1px; background: White; vertical-align: top; }
+
+div.my_matches_small, div.inner { color: #000; text-align: left; font-family: verdana, arial, sans-serif;}
+div.my_matches_small  { float: left; width: 280px; padding: 5px; margin: 1px; background: White; border: solid 1px ScrollBar }

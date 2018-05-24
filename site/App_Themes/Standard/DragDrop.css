@@ -1,0 +1,44 @@
+﻿.item 
+{
+	width:200px;
+	z-index:5000; 
+	border-width:2px;
+	border-color:Black;
+	color:Black;
+	cursor:pointer;
+}
+
+.dragElement
+{
+	background-color:#FAEDD3;
+	color:Black;
+	border-style:dotted;
+	border-width:1px;
+	cursor:move;
+}
+
+.dragElement a
+{
+    color:#656565;
+}
+
+.dropZone 
+{
+	background-color:#FFFF66; 
+	width:300px; 
+	height:300px; 
+	position:absolute;
+	top:200px; 
+	left:200px;
+	overflow:auto;
+}
+
+.highlightDropZone 
+{	
+	background-color:#FCDEA8;	
+}
+
+.DefaultDropZoneColor
+{
+	background-color:White;
+}
