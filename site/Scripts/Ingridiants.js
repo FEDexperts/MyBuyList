@@ -1,17 +1,15 @@
 ﻿var ingridiantsContainer;
 
-var IngridiantsApi = function () {
-    
-    var ingridiantsArr = new Array();
-    var fractures = new Array()
+var ingridiantsApi =  {
 
-    this.SelectedIngrediant;
+    //var ingridiantsArr = new Array();
+    //var fractures = new Array()
+    //this.SelectedIngrediant;
 
-    this.Length = function(){
+    length: () => {
         return ingridiantsArr.length;
-    }
-
-    this.getIngridiants = function (prefix) {
+    },
+    getIngridiants: (prefix)  => {
         var list = $('#ingridiantsList');
         
         if (prefix.length < 3) {
@@ -52,32 +50,26 @@ var IngridiantsApi = function () {
                 })
             }
         }, 'json');
-    }
-
-    this.Exists = function (ingridiant) {
+    },
+    exists: (ingridiant) => {
         for (var i = 0; i < ingridiantsArr.length; i++) {
             if (ingridiantsArr[i].Id === ingridiant.Id)
                 return true;
         }
         return false;
-    }
-
-    this.IndexOf = function (id) {
+    },
+    indexOf: (id) => {
         for (var i = 0; i < ingridiantsArr.length; i++) {
             if (ingridiantsArr[i].Id === id)
                 return i;
         }
         return -1;
-    }
-
-    this.Add = function (ingridiant) {
-
+    },
+    add: (ingridiant) => {
         ingridiant.Id = ingridiantsArr.length - 1;
         ingridiantsArr.push(ingridiant);
-    }
-
-    this.Update = function (ingridiant) {
-
+    },
+    update: (ingridiant) => {
         var indx = ingridiant.Id;
         ingridiantsArr[indx].FoodId = ingridiant.FoodId;
         ingridiantsArr[indx].IntQuantity = ingridiant.IntQuantity;
@@ -88,23 +80,17 @@ var IngridiantsApi = function () {
         ingridiantsArr[indx].Remarks = ingridiant.Remarks;
         ingridiantsArr[indx].FoodName = ingridiant.FoodName;
         ingridiantsArr[indx].DisplayIngredient = ingridiant.DisplayIngredient;
-    }
-
-    this.Delete = function (id) {
-
+    },
+    delete: (id) => {
         ingridiantsArr.splice(id, 1);
-    }
-
-    this.GetItem = function (id) {
-
+    },
+    getItem: (id) => {
         return ingridiantsArr[id];
-    }
-
-    this.GetList = function () {
+    },
+    getList: () => {
         return ingridiantsArr;
-    }
-
-    this.SetList = function (arr) {
+    },
+    setList: (arr) => {
         for (var i = 0; i < arr.length; i++) {
 
             var ingrediant = new Ingridiant();
@@ -119,7 +105,7 @@ var IngridiantsApi = function () {
             ingrediant.FractionDisplay = arr[i].FractionDisplay;
             ingrediant.Remarks = arr[i].Remarks;
             ingrediant.DisplayIngredient = arr[i].DisplayIngredient;
-            this.Add(ingrediant);
+            this.add(ingrediant);
         }
     }
 }
@@ -147,15 +133,14 @@ var Ingridiant = function () {
     }
 }
 
-$(document).ready(function () {
+$(document).ready(() => {
 
     InitIngediantsControl();
 
     $('#updateIngridiant').hide();
 
-    $('#ingridiantName').keyup(function () {
-        var prefix = $('#ingridiantName').val();
-        IngridiantsApi.getIngridiants(prefix);
+    $('#ingridiantName').keyup((data) => {
+        ingridiantsApi.getIngridiants(data.target.value);
     })
 
     $('#addIngridiant').mousedown(function () {
@@ -193,12 +178,12 @@ $(document).ready(function () {
 
         if (!ingridiant.IsValid()) return;
 
-        if (!IngridiantsApi.Exists(ingridiant)) {
+        if (!ingridiantsApi.exists(ingridiant)) {
 
-            IngridiantsApi.Add(ingridiant);
+            ingridiantsApi.Add(ingridiant);
         }
         else {
-            IngridiantsApi.Update(ingridiant);
+            ingridiantsApi.update(ingridiant);
         }
 
         ShowList();
@@ -231,9 +216,9 @@ function ShowList() {
     var ingredientsContainer = $('#ingredientsContainer');
     ingredientsContainer.html('');
 
-    for (var i = 0; i < IngridiantsApi.Length() ; i++) {
+    for (var i = 0; i < ingridiantsApi.length() ; i++) {
 
-        var ingridiant = IngridiantsApi.GetItem(i);
+        var ingridiant = ingridiantsApi.getItem(i);
         ingridiant.Id = i;
 
         var div = $('<div/>').addClass('row').attr('data-id', ingridiant.Id);
@@ -249,22 +234,22 @@ function ShowList() {
         ingredientsContainer.append(div);
     }
 
-    var listAsJSON = JSON.stringify(IngridiantsApi.GetList());
+    var listAsJSON = JSON.stringify(ingridiantsApi.getList());
     $('#hfIngridiants').val(listAsJSON);
     initEvents();
 }
 
 function InitIngediantsControl() {
-    if (!IngridiantsApi) {
-        IngridiantsApi = new IngridiantsContainer();
+    if (!ingridiantsApi) {
+        ingridiantsApi = new IngridiantsContainer();
     }
 }
 
 function ShowSavedListIngridiant(arr) {
-    if (!IngridiantsApi) {
-        IngridiantsApi = new IngridiantsContainer();
+    if (!ingridiantsApi) {
+        ingridiantsApi = new IngridiantsContainer();
     }
-    IngridiantsApi.SetList(arr);
+    ingridiantsApi.setList(arr);
     ShowList()
 }
 
@@ -273,7 +258,7 @@ function initEvents() {
     $('.modifyBtn').click(function () {
 
         var id = $(this).attr('data-id');
-        var ingridiant = IngridiantsApi.GetItem(id);
+        var ingridiant = ingridiantsApi.getItem(id);
 
         $('#' + quantityClientId).val(ingridiant.IntQuantity != 0 ? ingridiant.IntQuantity : '');
         $('#' + fractionClientId).val(ingridiant.FractionValue);
@@ -289,10 +274,10 @@ function initEvents() {
 
     $('.deleteBtn').click(function () {
         var id = $(this).attr('data-id');
-        IngridiantsApi.Delete(id);
+        ingridiantsApi.delete(id);
         $('.row[data-id=' + id + ']').hide();
 
-        var listAsJSON = JSON.stringify(IngridiantsApi.GetList());
+        var listAsJSON = JSON.stringify(ingridiantsApi.getList());
         $('#' + hfIngridiantsClientId).val(listAsJSON);
     })
 }

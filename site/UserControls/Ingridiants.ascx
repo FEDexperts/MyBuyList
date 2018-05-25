@@ -1,6 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Ingridiants.ascx.cs" Inherits="UserControls_Ingridiants" %>
 
-<script src="Scripts/Ingridiants.js"></script>
+<%var version = Guid.NewGuid().ToString(); %> 
+<script src="Scripts/Ingridiants.js?v=<%=version %>"></script>
 
 <script>
     var quantityClientId = '<%=txtQuantity.ClientID %>';
@@ -10,7 +11,9 @@
     var hfSelectedIngridiantClientId = '<%=hfSelectedIngridiant.ClientID %>';
     var hfFoodIdClientId = '<%=hfFoodId.ClientID %>';
     var decimalSeperator = '<%=DecimalSeperator%>';
+    
 </script>
+
 
 <asp:HiddenField ID="hfFoodId" runat="server" />
 <asp:HiddenField ID="hfSelectedIngridiant" runat="server" />
