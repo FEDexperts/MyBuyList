@@ -1,15 +1,11 @@
 ﻿var ingridiantsContainer;
 
-var ingridiantsApi =  {
-
-    //var ingridiantsArr = new Array();
-    //var fractures = new Array()
-    //this.SelectedIngrediant;
-
+var ingridiantsApi = {
     length: () => {
         return ingridiantsArr.length;
     },
-    getIngridiants: (prefix)  => {
+    getIngridiants: (prefix) => {
+
         var list = $('#ingridiantsList');
         
         if (prefix.length < 3) {
@@ -135,6 +131,7 @@ var Ingridiant = function () {
 
 $(document).ready(() => {
 
+    ingridiantsArr = [];
     InitIngediantsControl();
 
     $('#updateIngridiant').hide();
@@ -180,7 +177,7 @@ $(document).ready(() => {
 
         if (!ingridiantsApi.exists(ingridiant)) {
 
-            ingridiantsApi.Add(ingridiant);
+            ingridiantsApi.add(ingridiant);
         }
         else {
             ingridiantsApi.update(ingridiant);
