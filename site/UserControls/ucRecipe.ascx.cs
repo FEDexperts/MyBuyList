@@ -110,7 +110,6 @@ public partial class ucRecipe : System.Web.UI.UserControl
                 ddlCookTimeUnits.SelectedValue = unit.ToString();
             }
 
-
             var list = from item in recipe.RecipeCategories
                        select new SRL_RecipeCategory(0, item.CategoryId, item.Category.CategoryName);
             RecipeCategories_Rebind(list.ToArray());

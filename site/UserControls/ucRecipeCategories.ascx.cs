@@ -46,20 +46,20 @@ public partial class ucRecipeCategories : System.Web.UI.UserControl
         }
     }
 
-    public void storeRecipeCategories(int recipeId)
-    {        
-        if (recipeId != 0)
-        {
-            Recipe recipe = BusinessFacade.Instance.GetRecipe(recipeId);
-            if (recipe != null)
-            {
-                var list = from item in recipe.RecipeCategories
-                           select new SRL_RecipeCategory(item.RecipeId, item.CategoryId, item.Category.CategoryName);
-                this.RecipeCategories = list.ToArray();
-                this.RecipeId = recipe.RecipeId;
-            }
-        }
-    }
+    //public void storeRecipeCategories(int recipeId)
+    //{        
+    //    if (recipeId != 0)
+    //    {
+    //        Recipe recipe = BusinessFacade.Instance.GetRecipe(recipeId);
+    //        if (recipe != null)
+    //        {
+    //            var list = from item in recipe.RecipeCategories
+    //                       select new SRL_RecipeCategory(item.RecipeId, item.CategoryId, item.Category.CategoryName);
+    //            this.RecipeCategories = list.ToArray();
+    //            this.RecipeId = recipe.RecipeId;
+    //        }
+    //    }
+    //}
 
     public void ShowCategories(int recipeId, SRL_RecipeCategory[] recipeCategories)
     {

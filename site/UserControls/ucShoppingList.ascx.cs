@@ -156,9 +156,9 @@ namespace UserControls
             {
                 RecipesInShoppingList recipe = (RecipesInShoppingList)e.Item.DataItem;
                 HyperLink recipeName = (HyperLink)e.Item.FindControl("RecipeName");
-                recipeName.Text = recipe.RECIPE_NAME.Substring(0, recipe.RECIPE_NAME.Length <= 40 ? recipe.RECIPE_NAME.Length : 30);
+                //recipeName.Text = recipe.RECIPE_NAME.Substring(0, recipe.RECIPE_NAME.Length <= 40 ? recipe.RECIPE_NAME.Length : 30);
                 recipeName.NavigateUrl = string.Format("../RecipeDetails.aspx?RecipeId={0}", recipe.RECIPE_ID);
-                recipeName.ToolTip = recipe.RECIPE_NAME;
+                //recipeName.ToolTip = recipe.RECIPE_NAME;
             }
         }
         
