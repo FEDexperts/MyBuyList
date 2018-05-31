@@ -113,7 +113,7 @@ public partial class UserControls_Ingridiants : System.Web.UI.UserControl
             }
             else
             {
-                Page.ClientScript.RegisterStartupScript(GetType(), "ShowIngridiant", "InitAjaxIngediantsControl();", true);
+                //Page.ClientScript.RegisterStartupScript(GetType(), "ShowIngridiant", "InitAjaxIngediantsControl();", true);
             }
         }
         catch(Exception ex)

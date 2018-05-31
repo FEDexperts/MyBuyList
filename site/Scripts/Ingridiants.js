@@ -1,4 +1,6 @@
-﻿var ingridiantsContainer;
+﻿'use strict';
+
+var ingridiantsContainer;
 
 var ingridiantsApi = {
     length: () => {
@@ -14,7 +16,7 @@ var ingridiantsApi = {
             return;
         };
 
-        baseUrl = window.mblRestHost;
+        var baseUrl = window.mblRestHost;
         var url = baseUrl + 'Recipes/Ingridiants';
         $.get(url, { prefix: prefix }, function (response) {
             if (response.list) {
@@ -48,11 +50,7 @@ var ingridiantsApi = {
         }, 'json');
     },
     exists: (ingridiant) => {
-        for (var i = 0; i < ingridiantsArr.length; i++) {
-            if (ingridiantsArr[i].Id === ingridiant.Id)
-                return true;
-        }
-        return false;
+        return ingridiants[ingridiant.FoodId];
     },
     indexOf: (id) => {
         for (var i = 0; i < ingridiantsArr.length; i++) {
@@ -62,8 +60,7 @@ var ingridiantsApi = {
         return -1;
     },
     add: (ingridiant) => {
-        ingridiant.Id = ingridiantsArr.length - 1;
-        ingridiantsArr.push(ingridiant);
+        ingridiants[ingridiant.FoodId] = ingridiant;
     },
     update: (ingridiant) => {
         var indx = ingridiant.Id;
@@ -78,13 +75,13 @@ var ingridiantsApi = {
         ingridiantsArr[indx].DisplayIngredient = ingridiant.DisplayIngredient;
     },
     delete: (id) => {
-        ingridiantsArr.splice(id, 1);
+        delete ingridiants[id];
     },
     getItem: (id) => {
-        return ingridiantsArr[id];
+        return ingridiants[id];
     },
     getList: () => {
-        return ingridiantsArr;
+        return ingridiants;
     },
     setList: (arr) => {
         for (var i = 0; i < arr.length; i++) {
@@ -129,9 +126,11 @@ var Ingridiant = function () {
     }
 }
 
+var ingridiants = {};
+var updatedIngridiant;
+
 $(document).ready(() => {
 
-    ingridiantsArr = [];
     InitIngediantsControl();
 
     $('#updateIngridiant').hide();
@@ -156,12 +155,15 @@ $(document).ready(() => {
         $(this).css('background-image', 'url("Images/btn_AddProduct_over.png")');
     })
 
-    $('#addIngridiant, #updateIngridiant').click(function () {
+    $('#addIngridiant, #updateIngridiant').click((data) => {
+
+        if (data.target.id === 'updateIngridiant') {
+            delete ingridiants[updatedIngridiant.Id]; 
+        }
 
         var ingridiant = new Ingridiant();
 
         var intQuantity = $('#' + quantityClientId).val();
-
         ingridiant.Id = $('#ingridiantId').val();
         ingridiant.FoodId = $('#ingridiantId').val();
         ingridiant.IntQuantity = intQuantity != '' ? intQuantity : 0;
@@ -173,15 +175,11 @@ $(document).ready(() => {
         ingridiant.Remarks = $('#' + foodRemarkClientId).val();
         ingridiant.DisplayIngredient = ingridiant.FractionDisplay + (intQuantity != '' ? intQuantity : '') + ' ' + ingridiant.MeasurementUnitName + ' ' + ingridiant.FoodName;
 
-        if (!ingridiant.IsValid()) return;
-
-        if (!ingridiantsApi.exists(ingridiant)) {
-
+        if (ingridiant.IsValid()) {
             ingridiantsApi.add(ingridiant);
         }
-        else {
-            ingridiantsApi.update(ingridiant);
-        }
+
+        //console.log('ingridiants => ', ingridiants);
 
         ShowList();
 
@@ -197,12 +195,15 @@ $(document).ready(() => {
     $('#updateIngridiant').mousedown(function () {
         $(this).css('background-image', 'url("Images/btn_EditProduct_down.png")');
     })
+
     $('#updateIngridiant').mouseup(function () {
         $(this).css('background-image', 'url("Images/btn_EditProduct_over.png")');
     })
+
     $('#updateIngridiant').mouseout(function () {
         $(this).css('background-image', 'url("Images/btn_EditProduct_up.png")');
     })
+
     $('#updateIngridiant').mouseover(function () {
         $(this).css('background-image', 'url("Images/btn_EditProduct_over.png")');
     })
@@ -213,10 +214,9 @@ function ShowList() {
     var ingredientsContainer = $('#ingredientsContainer');
     ingredientsContainer.html('');
 
-    for (var i = 0; i < ingridiantsApi.length() ; i++) {
+    for (var key in ingridiants) {
 
-        var ingridiant = ingridiantsApi.getItem(i);
-        ingridiant.Id = i;
+        var ingridiant = ingridiants[key];
 
         var div = $('<div/>').addClass('row').attr('data-id', ingridiant.Id);
         var spanEdit = $('<a />').html('עדכן').addClass('listBtn').addClass('updateBtn').addClass('modifyBtn').addClass('col').attr('data-id', ingridiant.Id);
@@ -252,30 +252,32 @@ function ShowSavedListIngridiant(arr) {
 
 function initEvents() {
 
-    $('.modifyBtn').click(function () {
+    $('.modifyBtn').click((data) => {
 
-        var id = $(this).attr('data-id');
-        var ingridiant = ingridiantsApi.getItem(id);
+        var id = $(data.target).attr('data-id');
+        updatedIngridiant = ingridiantsApi.getItem(id);
 
-        $('#' + quantityClientId).val(ingridiant.IntQuantity != 0 ? ingridiant.IntQuantity : '');
-        $('#' + fractionClientId).val(ingridiant.FractionValue);
-        $('#' + hfFoodIdClientId).val(ingridiant.FoodId);
-        $('#' + foodNameClientId).val(ingridiant.FoodName);
-        $('#' + foodRemarkClientId).val(ingridiant.Remarks);
-        $('#' + unitClientId).val(ingridiant.MeasurementUnitId);
+        //console.log(updatedIngridiant);
+
+        $('#' + quantityClientId).val(updatedIngridiant.IntQuantity != 0 ? updatedIngridiant.IntQuantity : '');
+        $('#' + fractionClientId).val(updatedIngridiant.FractionValue);
+        $('#' + hfFoodIdClientId).val(updatedIngridiant.FoodId);
+        $('#ingridiantName').val(updatedIngridiant.FoodName);
+        $('#' + foodRemarkClientId).val(updatedIngridiant.Remarks);
+        $('#' + unitClientId).val(updatedIngridiant.MeasurementUnitId);
         $('#' + hfSelectedIngridiantClientId).val(id);
 
         $('#addIngridiant').hide();
         $('#updateIngridiant').show();
     })
 
-    $('.deleteBtn').click(function () {
-        var id = $(this).attr('data-id');
+    $('.deleteBtn').click((data) => {
+        var id = $(data.target).attr('data-id');
         ingridiantsApi.delete(id);
         $('.row[data-id=' + id + ']').hide();
 
         var listAsJSON = JSON.stringify(ingridiantsApi.getList());
-        $('#' + hfIngridiantsClientId).val(listAsJSON);
+        $('#hfIngridiants').val(listAsJSON);
     })
 }
 

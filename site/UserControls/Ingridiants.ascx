@@ -11,7 +11,6 @@
     var hfSelectedIngridiantClientId = '<%=hfSelectedIngridiant.ClientID %>';
     var hfFoodIdClientId = '<%=hfFoodId.ClientID %>';
     var decimalSeperator = '<%=DecimalSeperator%>';
-    
 </script>
 
 
