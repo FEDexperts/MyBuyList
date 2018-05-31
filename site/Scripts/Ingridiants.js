@@ -157,6 +157,8 @@ $(document).ready(() => {
 
     $('#addIngridiant, #updateIngridiant').click((data) => {
 
+        //debugger;
+
         if (data.target.id === 'updateIngridiant') {
             delete ingridiants[updatedIngridiant.Id]; 
         }
@@ -179,7 +181,7 @@ $(document).ready(() => {
             ingridiantsApi.add(ingridiant);
         }
 
-        //console.log('ingridiants => ', ingridiants);
+        console.log('ingridiants => ', ingridiants);
 
         ShowList();
 
@@ -257,8 +259,9 @@ function initEvents() {
         var id = $(data.target).attr('data-id');
         updatedIngridiant = ingridiantsApi.getItem(id);
 
-        //console.log(updatedIngridiant);
+        console.log('updatedIngridiant =>', updatedIngridiant);
 
+        $('#ingridiantId').val(updatedIngridiant.FoodId);
         $('#' + quantityClientId).val(updatedIngridiant.IntQuantity != 0 ? updatedIngridiant.IntQuantity : '');
         $('#' + fractionClientId).val(updatedIngridiant.FractionValue);
         $('#' + hfFoodIdClientId).val(updatedIngridiant.FoodId);
